@@ -47,7 +47,7 @@
     } 
 </style>
 <div>
-    <div>
+    <div id="stars-table-wrapper">
         <h2 class="mb-4">Stars Info</h2>
         <!--Create button-->
         <div class="mb-5 float-right">

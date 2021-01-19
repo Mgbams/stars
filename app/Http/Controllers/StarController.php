@@ -89,8 +89,9 @@ class StarController extends Controller
      */
     public function show($id)
     {
-        //
-        return view('admin.stars.create');
+        $star= Star::where('id', $id)->first();
+        //dd($getStarById);
+        return view('admin.stars.edit', compact('star'));
     }
 
     /**
@@ -115,7 +116,47 @@ class StarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //dd($request);
+
+        // Form validation
+        $this->validate($request, [
+            'nom' => 'required',
+            'prenom' => 'required',
+            'description'=>'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+        ]);
+
+        // Check if a profile image has been uploaded
+        if ($request->has('image')) {
+
+            $file = $request->file('image');
+
+            // Get image name
+            $fileName = $file->getClientOriginalName();
+
+            // Make the image name based on current timestamp and image name 
+            $uniqueFileName = $name =  time().'_'.$fileName;
+
+            // Enregistrer les données dans la base de données
+           
+             $form_data = array(
+                'nom'           =>  $request->nom,
+                'prenom'        => $request->prenom,
+                'image'         =>  $uniqueFileName,
+                'description'   => $request->description,
+             );
+
+             $star = Star::whereId($request->star_id)->update($form_data); // update database where id equals star_id
+
+            if($star) { // Si les données ont été correctement enregistrées dans la base de données
+
+                 // Créez un chemin de fichier où l'image sera stockée
+                $destinationPath = public_path().'/images/'.$request->star_id.'/';
+                $file->move($destinationPath, $uniqueFileName);
+            }
+        }
+        
+        return back()->with('success', 'Your data was successfully updated.');
     }
 
     /**
@@ -126,8 +167,7 @@ class StarController extends Controller
      */
     public function destroy($id)
     {
-        /*          $user = User::find(1);
-        $user->delete(); */
-        //$affectedRows = User::where('votes', '>', 100)->delete();
+        $data = Star::findOrFail($id);
+        $data->delete();
     }
 }

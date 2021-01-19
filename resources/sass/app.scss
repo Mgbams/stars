@@ -130,53 +130,70 @@ label {
        index page in Dashboard
     ==========================
 */
-.pagination-links {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
 
-#star-add-table {
-    img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
+#stars-table-wrapper {
+    .pagination-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
     }
 
-    // Styling the table links
+    #star-add-table {
+        img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
 
-    .crud-links:link,
-    .crud-links:visited {
-        background-color: white;
-        color: black;
+        // Styling the table links
+
+        .crud-links:link,
+        .crud-links:visited {
+            background-color: white;
+            color: black;
+            width: 62px;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .crud-links:hover,
+        .crud-links:active {
+            color: white;
+        }
+
+        #edit {
+            border: 2px solid $blue;
+        }
+
+        #edit:hover,
+        #edit:active {
+            background-color: $blue;
+        }
+
+        #delete {
+            border: 2px solid red;
+        }
+
+        #delete:hover,
+        #delete:active {
+            background-color: red;
+        }
+    }
+
+    #create_record {
+        background-color: $blue;
+        color: white;
         width: 62px;
         padding: 5px 10px;
         text-align: center;
-        text-decoration: none;
-        display: inline-block;
     }
 
-    .crud-links:hover,
-    .crud-links:active {
-        color: white;
-    }
-
-    #edit {
+    #create_record:hover {
+        color: black;
         border: 2px solid green;
-    }
-
-    #edit:hover,
-    #edit:active {
-        background-color: green;
-    }
-
-    #delete {
-        border: 2px solid red;
-    }
-
-    #delete:hover,
-    #delete:active {
-        background-color: red;
+        background-color: white;
     }
 }
 

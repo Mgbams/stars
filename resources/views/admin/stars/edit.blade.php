@@ -11,15 +11,13 @@
     @endif
 
     <div class="create-form-container">
-        {{ Form::open([
-            'route' => ['stars.store'],
-            'id' => 'form-container',
-            'method' => 'post', 'enctype' => 'multipart/form-data', 'class' => 'form-container'])
-        }}
+        <!-- use model binding to populate the html fields -->
+        {{  Form::model($star, ['route' => ['stars.update', $star->id], 'enctype' => 'multipart/form-data']) }}
         <!--Form contents-->
+            @method('PUT')
             <div class="form-group">
                 {{ Form::label('nom', 'Nom', ['class' => 'nom']) }}
-                {{ Form::text('nom',  '', ['id' => 'nom', 'class' => 'form-control '.($errors->has('nom') ? 'error':'')]) }}
+                {{ Form::text('nom', old('nom'), ['id' => 'nom', 'class' => 'form-control '.($errors->has('nom') ? 'error':'')]) }}
 
                  <!-- Error -->
                 @if ($errors->has('nom'))
@@ -31,7 +29,7 @@
 
             <div class="form-group">
                 {{ Form::label('prenom', 'Prénom', ['class' => 'prenom']) }}
-                {{ Form::text('prenom', '', ['id' => 'prenom', 'class' => 'form-control  '.($errors->has('prenom') ? 'error':'')]) }}
+                {{ Form::text('prenom', old('prenom'), ['id' => 'prenom', 'class' => 'form-control  '.($errors->has('prenom') ? 'error':'')]) }}
 
                 <!-- Error -->
                 @if ($errors->has('prenom'))
@@ -43,7 +41,7 @@
 
              <div class="form-group">
                 {{ Form::label('description', 'description', ['class' => 'description']) }} <br />
-                {{ Form::textarea('description', '', 
+                {{ Form::textarea('description', old('description'), 
                     ['id' => 'description', 'class' => 'form-conrol description '.($errors->has('description') ? 'error':''), 
                     'rows' => 5, 'placeholder'=> 'Entrez la description du star'
                     ]) 
@@ -68,8 +66,13 @@
                 @endif
             </div>
 
+            <!-- hidden input for saving a star's id -->
             <div class="form-group">
-                {{ Form::submit('Submit', ['class' => 'btn btn-success']) }}
+                {{ Form::hidden('star_id', $star->id) }}
+            </div>
+
+            <div class="form-group">
+                {{ Form::submit('Update', ['class' => 'btn btn-success']) }}
             </div>
         {{ Form::close() }}
     </div>

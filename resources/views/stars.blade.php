@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Stars de HelloCSE</title>
+    
+    <!--app.css-->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+
+    <!-- Stars.css -->
+    <link href="{{ asset('css/stars.css') }}" rel="stylesheet">
+        
+</head>
+<body>
+    <div class="flex-center position-ref full-height">
+        @if (Route::has('login'))
+            <div class="top-right links">
+               
+                @If(Auth::check())
+                    <!--Si authentifié et que l'utilisateur est un admin, affichez le lien du tableau de bord-->
+                    @if(Auth::check() && Auth::user()->isAdministrator())
+                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                    @else 
+                         <!--Sinon affichez le bouton de sign out-->
+                         <a href="#" class="btn btn-default btn-flat float-right signout-modified-link"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Sign out
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    @endif
+                @else
+                    <a href="{{ route('login') }}">Login</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                 @endauth
+            </div>
+        @endif
+    </div>
+    <main>
+        <div class="page-title">
+            <h1>Profile Browser</h1>
+        </div>
+        <div id="stars-lists">
+            <div class="panel active"> <!-- first panel -->
+                <div class="acc-header">header1</div>
+                <div class="acc-body">body of panel 1</div>
+            </div>
+            <div class="panel"> <!-- second panel -->
+                <div class="acc-header">header2</div>
+                <div class="acc-body">body of panel 2</div>
+            </div>
+            <div class="panel"> <!-- third panel -->
+                <div class="acc-header">header3</div>
+                <div class="acc-body">body of panel 3</div>
+            </div>
+        </div>
+    
+    </main>
+    <script type="text/javascript" src="{{ asset('js/stars-index.js') }}"></script>
+</body>
+</html>

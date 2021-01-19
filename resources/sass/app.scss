@@ -1,0 +1,193 @@
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~admin-lte/build/scss/AdminLTE";
+
+/*
+    =========================================
+       Formatting of login and register page
+    =========================================
+*/
+
+.register-box .card,
+.login-page .card {
+    form {
+        border: 1px solid #1aa3ff62;
+        background: #ecf5fc;
+        padding: 5px 8px 5px;
+    }
+}
+
+.register-logo a:hover,
+.login-logo a:hover {
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: blue !important;
+}
+
+/*
+    =============================
+        stars lists page formats
+    =============================
+*/
+main {
+    width: 100% !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    .page-title {
+        text-align: center;
+    }
+}
+/** This class will hide the stars description by default **/
+#stars-lists .acc-body {
+    display: none;
+}
+
+/** This class will show the description if it has a parent with active class 
+**  and will change the background colours to white
+**/
+#stars-lists .active {
+    .acc-body,
+    .acc-header {
+        display: block;
+        background-color: white !important;
+    }
+}
+
+#stars-lists .panel {
+    color: #444;
+    border: 1px solid #ccc;
+    background: #ddd;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#stars-lists .acc-header,
+.acc-body {
+    padding-left: 10px;
+}
+
+/* 
+    ==========================
+        create form page
+    ==========================
+*/
+
+.create-form-container {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    width: 40vw;
+    margin: auto;
+
+    form {
+        border: 1px solid #1aa3ff62;
+        background: #ecf5fc;
+        padding: 40px 50px 45px;
+    }
+}
+
+form-control:focus {
+    border-color: #000;
+    box-shadow: none;
+    color: black;
+}
+
+label {
+    font-weight: 600;
+}
+
+.error {
+    color: red;
+    font-weight: 400;
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+.form-control.error {
+    border-color: red;
+    padding: 0.375rem 0.75rem;
+}
+
+.description {
+    width: 95%;
+}
+
+.create-alert-success {
+    width: 40vw;
+    text-align: center;
+    margin: auto;
+}
+
+/* 
+    ==========================
+       index page in Dashboard
+    ==========================
+*/
+.pagination-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#star-add-table {
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    // Styling the table links
+
+    .crud-links:link,
+    .crud-links:visited {
+        background-color: white;
+        color: black;
+        width: 62px;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .crud-links:hover,
+    .crud-links:active {
+        color: white;
+    }
+
+    #edit {
+        border: 2px solid green;
+    }
+
+    #edit:hover,
+    #edit:active {
+        background-color: green;
+    }
+
+    #delete {
+        border: 2px solid red;
+    }
+
+    #delete:hover,
+    #delete:active {
+        background-color: red;
+    }
+}
+
+/* 
+    ==========================
+        Media Queries
+    ==========================
+*/
+
+@media only screen and (min-width: 768px) {
+    main {
+        width: 80% !important;
+    }
+}

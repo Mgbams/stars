@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Star;
+use File;
 
 class StarController extends Controller
 {
@@ -164,12 +165,12 @@ class StarController extends Controller
      */
     public function destroy($id)
     {
-        // Supprimer l'étoile par identifiant
+        // Supprimer un star par identifiant
         $data = Star::findOrFail($id);
         $data->delete();
 
-        //$destinationPath = public_path().'/images/'.$id;
-        //File::deleteDirectory(public_path('/images/'.$id));
+        $folderPath = public_path('images/'.$id);
+        File::deleteDirectory($folderPath); // Supprimer l'image correspondante
 
         return redirect()->route('stars.index')->with('success', 'Vos données ont été supprimés avec succès.');
     }

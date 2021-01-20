@@ -17,7 +17,7 @@
 <body>
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
-            <div class="top-right links">
+            <div class="top-right links" id="top-right-links">
                
                 @If(Auth::check())
                     <!--Si authentifié et que l'utilisateur est un admin, affichez le lien du tableau de bord-->
@@ -43,7 +43,7 @@
             </div>
         @endif
     </div>
-    <main>
+    <div class="main">
         <div class="page-title">
             <h1>Profile Browser</h1>
         </div>
@@ -51,15 +51,18 @@
             @if($stars)
             @foreach($stars as $star)
             <!-- si l'id de $star est égal à l'id de $firstStar, alors la description est ouverte par défaut -->
-            <div class="panel ($firstStar->id ===  $star->id) ? 'active' : ''"> 
-                <div class="acc-header">{{ $star->nom}}&nbsp;{{ $star->prenom}}</div>
-                <div class="acc-body">{{ $star->description}}</div>
+            <div syle="padding-bottom: 30px;" class="panel ($firstStar->id ===  $star->id) ? 'active' : ''"> 
+                <div class="acc-header" style="font-weight: bold;">{{ $star->nom}}&nbsp;{{ $star->prenom}}</div>
+                <div class="acc-body" style="min-height: 150px;">
+                    <span style="margin-bottom: 30px;"><img align="left" style="width: 100px; height: 100px; margin: 6px 10px 0px 0px;" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/></span>
+                    <span>{{ $star->description}}</span>
+                </div>
             </div>
             @endforeach
             @endif
         </div>
     
-    </main>
+    </div>
     <script type="text/javascript" src="{{ asset('js/stars-index.js') }}"></script>
 </body>
 </html>

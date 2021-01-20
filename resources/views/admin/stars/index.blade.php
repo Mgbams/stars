@@ -56,7 +56,7 @@
         <table class="table table-bordered" id="star-add-table">
             <thead>
                 <tr>
-                    <th>image</th>
+                    <th class="hide-on-small-screen">image</th>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Description</th>
@@ -67,7 +67,7 @@
             <tbody>
             @foreach($stars as $star)
                 <tr>
-                    <td><img src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}"/></td>
+                    <td class="hide-on-small-screen"><img src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}"/></td>
                     <td> {{ $star->nom }} </td>
                     <td>{{ $star->prenom }}</td>
                     <td>{{ $star->description }}</td>

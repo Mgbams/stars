@@ -32694,6 +32694,13 @@ a.text-muted:hover {
   color: #ffffff;
 }
 
+.dashboard-hidden {
+  text-align: center;
+  margin: auto;
+  display: none;
+  list-style-type: none;
+}
+
 /*
     =========================================
        Formatting of login and register page
@@ -32720,7 +32727,7 @@ a.text-muted:hover {
     =============================
 */
 
-main {
+.main {
   width: 100% !important;
   position: absolute;
   left: 50%;
@@ -32728,8 +32735,9 @@ main {
   transform: translate(-50%, -50%);
 }
 
-main .page-title {
+.main .page-title {
   text-align: center;
+  margin-top: 100px;
 }
 
 /** This class will hide the stars description by default **/
@@ -32832,11 +32840,24 @@ label {
   border-radius: 50%;
 }
 
+#stars-table-wrapper #star-add-table th {
+  background-color: #1d96b2;
+  border: 1px solid #1d96b2;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+}
+
+#stars-table-wrapper #star-add-table tr:nth-of-type(even) {
+  background-color: rgba(94, 93, 82, 0.1);
+}
+
 #stars-table-wrapper #star-add-table .crud-links:link,
 #stars-table-wrapper #star-add-table .crud-links:visited {
   background-color: white;
   color: black;
   width: 80px;
+  height: 28px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -32891,8 +32912,45 @@ label {
 */
 
 @media only screen and (min-width: 768px) {
-  main {
+  .main {
     width: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    margin-top: 100px !important;
+  }
+
+  #top-right-links {
+    margin-bottom: 100px;
+    z-index: 10;
+  }
+
+  .hide-on-small-screen {
+    display: none;
+  }
+
+  #delete {
+    margin-top: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .create-form-container {
+    width: 80vw;
+  }
+
+  .dashboard-hidden {
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .create-form-container {
+    width: 80vw;
   }
 }
 

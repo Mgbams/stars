@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 //use Illuminate\Support\Facades\Storage;
 use App\Models\Star;
 use File;
@@ -41,8 +42,6 @@ class StarController extends Controller
      */
     public function store(Request $request)
     {   
-        //dd($request->file('image')->getClientOriginalName());
-
          // Form validation
         $this->validate($request, [
             'nom' => 'required',
@@ -50,6 +49,10 @@ class StarController extends Controller
             'description'=>'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
+
+        // Formatting the inputs
+        $nom = ucwords(strtolower($request->nom));
+        $prenom = ucwords(strtolower($request->prenom));
 
         // Check if a profile image has been uploaded
         if ($request->has('image')) {
@@ -65,10 +68,10 @@ class StarController extends Controller
             // Enregistrer les données dans la base de données
             $star = Star::create(
                 [
-                    'nom'           =>  $request->nom,
-                    'prenom'        => $request->prenom,
+                    'nom'           =>  $nom,
+                    'prenom'        =>  $prenom,
                     'image'         =>  $uniqueFileName,
-                    'description'   => $request->description,
+                    'description'   =>  $request->description,
                 ]
             );
 
@@ -120,9 +123,12 @@ class StarController extends Controller
         $this->validate($request, [
             'nom' => 'required',
             'prenom' => 'required',
-            'description'=>'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'description'=>'required'
         ]);
+
+        // Formatting the inputs
+        $nom        = ucwords(strtolower($request->nom));
+        $prenom     = ucwords(strtolower($request->prenom));
 
         // Vérifiez si une image de profil a été téléchargée
         if ($request->has('image')) {
@@ -138,13 +144,14 @@ class StarController extends Controller
             // Enregistrer les données dans la base de données
            
              $form_data = array(
-                'nom'           =>  $request->nom,
-                'prenom'        => $request->prenom,
+                'nom'           =>  $nom,
+                'prenom'        =>  $prenom,
                 'image'         =>  $uniqueFileName,
-                'description'   => $request->description,
+                'description'   =>  $request->description,
              );
 
-             $star = Star::whereId($request->star_id)->update($form_data); // update database where id equals star_id
+             // mettre à jour la base de données où id est égal à star_id
+             $star = Star::whereId($request->star_id)->update($form_data);
 
             if($star) { // Si les données ont été correctement enregistrées dans la base de données
 
@@ -152,6 +159,15 @@ class StarController extends Controller
                 $destinationPath = public_path().'/images/'.$request->star_id.'/';
                 $file->move($destinationPath, $uniqueFileName);
             }
+        } else { // Si l'image n'a pas été modifiée
+             $form_data = array(
+                'nom'           =>  $nom,
+                'prenom'        =>  $prenom,
+                'description'   =>  $request->description
+             );
+
+             // mettre à jour la base de données où id est égal à star_id
+             $star = Star::whereId($request->star_id)->update($form_data);
         }
         
         return back()->with('success', 'Vos données ont été mises à jour avec succès.');

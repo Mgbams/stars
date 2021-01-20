@@ -3,13 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-//use Illuminate\Support\Facades\Storage;
 use App\Models\Star;
+use App\Repositories\StarRepository;
 use File;
 
 class StarController extends Controller
 {
+    private $starRepository;
+
+    public function __construct(StarRepository $starRepository)
+    {
+        $this->starRepository =  $starRepository; //Initialiser l'attribut
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +23,7 @@ class StarController extends Controller
      */
     public function index()
     {
-        $stars = Star::paginate(5); // 5 contents per page
+        $stars = $this->starRepository->paginateStars(5); // 5 contents per page
         //return the view containing the lists of stars
         return view('admin.stars.index', compact('stars'));
     }
@@ -106,7 +112,9 @@ class StarController extends Controller
     public function edit($id)
     {
         // Obtenir l'utilisateur par identifiant pour le modifier
-        $star= Star::where('id', $id)->first();
+
+        $star = $this->starRepository->editSingleStarById($id);
+
         return view('admin.stars.edit', compact('star'));
     }
 
@@ -150,8 +158,9 @@ class StarController extends Controller
                 'description'   =>  $request->description,
              );
 
-             // mettre à jour la base de données où id est égal à star_id
-             $star = Star::whereId($request->star_id)->update($form_data);
+            // mettre à jour la base de données où id est égal à star_id
+            
+            $star = $this->starRepository->updateStarById($request->star_id, $form_data);
 
             if($star) { // Si les données ont été correctement enregistrées dans la base de données
 
@@ -166,8 +175,9 @@ class StarController extends Controller
                 'description'   =>  $request->description
              );
 
-             // mettre à jour la base de données où id est égal à star_id
-             $star = Star::whereId($request->star_id)->update($form_data);
+            // mettre à jour la base de données où id est égal à star_id
+            
+            $star = $this->starRepository->updateStarById($request->star_id, $form_data);
         }
         
         return back()->with('success', 'Vos données ont été mises à jour avec succès.');
@@ -182,7 +192,7 @@ class StarController extends Controller
     public function destroy($id)
     {
         // Supprimer un star par identifiant
-        $data = Star::findOrFail($id);
+        $data = $this->starRepository->deleteStarById($id); // utiliser la requête du repository
         $data->delete();
 
         $folderPath = public_path('images/'.$id);

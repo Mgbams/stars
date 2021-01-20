@@ -10,6 +10,12 @@
     </div>
     @endif
 
+    <div class="back-link-container">
+        <a class="back-to-index-link" href="{{ route('stars.index') }}">
+            <i class="far fa-hand-point-left"></i>&nbsp; Back
+        </a>
+    </div>
+
     <div class="create-form-container">
         <!--utiliser la liaison de modèle pour remplir les champs html-->
         {{  Form::model($star, ['route' => ['stars.update', $star->id], 'enctype' => 'multipart/form-data']) }}

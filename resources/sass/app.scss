@@ -243,6 +243,27 @@ label {
     }
 }
 
+/*
+ *   ==================
+ *    Edit page
+ *   ===================
+*/
+
+.back-link-container {
+    padding-top: 20px;
+    padding-left: 20px;
+
+    .back-to-index-link {
+        background-color: white;
+        width: 80px;
+        height: 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid green;
+    }
+}
+
 /* 
     ==========================
         Media Queries

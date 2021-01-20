@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Repositories\StarRepository;
 use App\Models\Star;
 
 class HomeController extends Controller
 {
+    private $starRepository;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(StarRepository $starRepository)
     {
-
-         $this->middleware('auth', ['only' => 'index']);
+        $this->starRepository =  $starRepository; //Initialiser l'attribut
+        $this->middleware('auth', ['only' => 'index']);
     }
 
     /**
@@ -36,8 +38,10 @@ class HomeController extends Controller
      */
     public function show()
     {
-         $firstStar = Star::all()->take(1); // première star dans la base de données
-         $stars = Star::all();
+         $firstStar = $this->starRepository->getFirstStar(); // première star dans la base de données
+
+         $stars =  $this->starRepository->getAllStars();
+
         return view('stars', compact('stars', 'firstStar'));
     }
 }

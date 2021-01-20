@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Star;
 
 class StarController extends Controller
@@ -89,9 +90,7 @@ class StarController extends Controller
      */
     public function show($id)
     {
-        $star= Star::where('id', $id)->first();
-        //dd($getStarById);
-        return view('admin.stars.edit', compact('star'));
+        //
     }
 
     /**
@@ -102,9 +101,9 @@ class StarController extends Controller
      */
     public function edit($id)
     {
-        //
-        
-       
+        // Obtenir l'utilisateur par identifiant pour le modifier
+        $star= Star::where('id', $id)->first();
+        return view('admin.stars.edit', compact('star'));
     }
 
     /**
@@ -116,8 +115,6 @@ class StarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //dd($request);
-
         // Form validation
         $this->validate($request, [
             'nom' => 'required',
@@ -126,7 +123,7 @@ class StarController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
 
-        // Check if a profile image has been uploaded
+        // Vérifiez si une image de profil a été téléchargée
         if ($request->has('image')) {
 
             $file = $request->file('image');
@@ -134,7 +131,7 @@ class StarController extends Controller
             // Get image name
             $fileName = $file->getClientOriginalName();
 
-            // Make the image name based on current timestamp and image name 
+            // Créer le nom de l'image en fonction de l'horodatage actuel et du nom de l'image
             $uniqueFileName = $name =  time().'_'.$fileName;
 
             // Enregistrer les données dans la base de données
@@ -156,7 +153,7 @@ class StarController extends Controller
             }
         }
         
-        return back()->with('success', 'Your data was successfully updated.');
+        return back()->with('success', 'Vos données ont été mises à jour avec succès.');
     }
 
     /**
@@ -167,7 +164,13 @@ class StarController extends Controller
      */
     public function destroy($id)
     {
+        // Supprimer l'étoile par identifiant
         $data = Star::findOrFail($id);
         $data->delete();
+
+        //$destinationPath = public_path().'/images/'.$id;
+        //File::deleteDirectory(public_path('/images/'.$id));
+
+        return redirect()->route('stars.index')->with('success', 'Vos données ont été supprimés avec succès.');
     }
 }

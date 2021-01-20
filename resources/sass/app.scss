@@ -151,8 +151,7 @@ label {
         .crud-links:visited {
             background-color: white;
             color: black;
-            width: 62px;
-            padding: 5px 10px;
+            width: 80px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -179,6 +178,11 @@ label {
         #delete:hover,
         #delete:active {
             background-color: red;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-evenly;
         }
     }
 

@@ -71,9 +71,19 @@
                     <td> {{ $star->nom }} </td>
                     <td>{{ $star->prenom }}</td>
                     <td>{{ $star->description }}</td>
-                    <td>
-                        <a id="edit" class="crud-links" href="{{ url('stars', ['star' => $star->id]) }}"> Edit </a>
-                        <a id="delete" class="crud-links"  href="{{ url('stars', ['star' => $star->id]) }}"> Delete </a>
+                    <td class="action-buttons">
+                        <a id="edit" class="crud-links" href="{{ route('stars.edit', ['star' => $star->id]) }}">
+                            <i class="far fa-md fa-edit"></i>&nbsp; Edit 
+                        </a>
+
+                        <form action="{{ route('stars.destroy', $star->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="crud-links" id="delete">
+                                <i class="fas fa-trash fa-md text-danger"></i>&nbsp;Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

@@ -32836,8 +32836,7 @@ label {
 #stars-table-wrapper #star-add-table .crud-links:visited {
   background-color: white;
   color: black;
-  width: 62px;
-  padding: 5px 10px;
+  width: 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -32864,6 +32863,11 @@ label {
 #stars-table-wrapper #star-add-table #delete:hover,
 #stars-table-wrapper #star-add-table #delete:active {
   background-color: red;
+}
+
+#stars-table-wrapper #star-add-table .action-buttons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #stars-table-wrapper #create_record {

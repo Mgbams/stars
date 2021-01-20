@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Star;
+
 class HomeController extends Controller
 {
     /**
@@ -34,6 +36,8 @@ class HomeController extends Controller
      */
     public function show()
     {
-        return view('stars');
+         $firstStar = Star::all()->take(1); // première star dans la base de données
+         $stars = Star::all();
+        return view('stars', compact('stars', 'firstStar'));
     }
 }

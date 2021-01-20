@@ -48,18 +48,15 @@
             <h1>Profile Browser</h1>
         </div>
         <div id="stars-lists">
-            <div class="panel active"> <!-- first panel -->
-                <div class="acc-header">header1</div>
-                <div class="acc-body">body of panel 1</div>
+            @if($stars)
+            @foreach($stars as $star)
+            <!-- si l'id de $star est égal à l'id de $firstStar, alors la description est ouverte par défaut -->
+            <div class="panel ($firstStar->id ===  $star->id) ? 'active' : ''"> 
+                <div class="acc-header">{{ $star->nom}}&nbsp;{{ $star->prenom}}</div>
+                <div class="acc-body">{{ $star->description}}</div>
             </div>
-            <div class="panel"> <!-- second panel -->
-                <div class="acc-header">header2</div>
-                <div class="acc-body">body of panel 2</div>
-            </div>
-            <div class="panel"> <!-- third panel -->
-                <div class="acc-header">header3</div>
-                <div class="acc-body">body of panel 3</div>
-            </div>
+            @endforeach
+            @endif
         </div>
     
     </main>

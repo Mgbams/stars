@@ -10,6 +10,10 @@
     display: none;
     list-style-type: none;
 }
+
+#top-right-links {
+    z-index: 10;
+}
 /*
     =========================================
        Formatting of login and register page
@@ -49,10 +53,24 @@
         text-align: center;
         margin-top: 100px;
     }
+
+    img {
+        width: 120px;
+        height: 120px;
+        margin: 6px 10px 0px 0px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        padding: 5px;
+    }
 }
 /** This class will hide the stars description by default **/
 #stars-lists .acc-body {
     display: none;
+    min-height: 150px;
+    .img-span {
+        margin-bottom: 30px;
+    }
+    padding-right: 10px;
 }
 
 /** This class will show the description if it has a parent with active class 
@@ -78,6 +96,10 @@
 #stars-lists .acc-header,
 .acc-body {
     padding-left: 10px;
+}
+
+#stars-lists .acc-header {
+    font-weight: bold;
 }
 
 /* 
@@ -261,10 +283,127 @@ label {
     .dashboard-hidden {
         display: inline;
     }
+
+    //accordion content animation
+
+    #stars-lists .active .acc-body {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 40px;
+        /* Safari */
+        -webkit-animation: slide-up 2s ease-out forwards;
+        /* Firefox*/
+        -moz-animation: slide-up 2s ease-out forwards;
+        /* Opera */
+        -o-animation: slide-up 2s ease-out forwards;
+        /* IE */
+        animation: slide-up 2s ease-out forwards;
+    }
+    /*Animation functionality*/
+    @-webkit-keyframes slide-up {
+        0% {
+            min-height: 0;
+        }
+
+        25% {
+            height: 100px;
+        }
+
+        50% {
+            height: 150px;
+        }
+
+        75% {
+            height: 200px;
+        }
+
+        100% {
+            height: auto;
+            padding-bottom: 60px;
+            background-color: yellow !important;
+        }
+    }
+    @-moz-keyframes slide-up {
+        0% {
+            height: 0;
+        }
+
+        25% {
+            height: 100px;
+        }
+
+        50% {
+            height: 150px;
+        }
+
+        75% {
+            height: 200px;
+        }
+
+        100% {
+            height: auto;
+            padding-bottom: 60px;
+            background-color: yellow !important;
+        }
+    }
+    @-o-keyframes slide-up {
+        0% {
+            height: 0;
+        }
+
+        25% {
+            height: 100px;
+        }
+
+        50% {
+            height: 150px;
+        }
+
+        75% {
+            height: 200px;
+        }
+
+        100% {
+            min-height: 400px;
+            padding-bottom: 60px;
+        }
+    }
+    @keyframes slide-up {
+        0% {
+            height: 0;
+        }
+
+        25% {
+            height: 100px;
+        }
+
+        50% {
+            height: 150px;
+        }
+
+        75% {
+            height: 200px;
+        }
+
+        100% {
+            height: auto;
+        }
+    }
 }
 
 @media only screen and (max-width: 800px) {
     .create-form-container {
         width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    // displays edit and delete button in colum format
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    #delete {
+        margin-top: 20px;
     }
 }

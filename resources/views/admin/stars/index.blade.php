@@ -59,7 +59,7 @@
                     <th class="hide-on-small-screen">image</th>
                     <th>Nom</th>
                     <th>Prénom</th>
-                    <th>Description</th>
+                    <th style="width: 35%;">Description</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -70,7 +70,7 @@
                     <td class="hide-on-small-screen"><img src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}"/></td>
                     <td> {{ $star->nom }} </td>
                     <td>{{ $star->prenom }}</td>
-                    <td>{{ $star->description }}</td>
+                    <td  style="width: 35%;">{{ $star->description }}</td>
                     <td class="action-buttons">
                         <a id="edit" class="crud-links" href="{{ route('stars.edit', ['star' => $star->id]) }}">
                             <i class="far fa-md fa-edit"></i>&nbsp; Edit 

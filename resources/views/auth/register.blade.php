@@ -25,7 +25,7 @@
         <div class="card-body register-card-body">
             <p class="login-box-msg">Register a new membership</p>
 
-            <form method="post" action="{{ route('register') }}">
+            <form method="post" action="{{ route('register') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="input-group mb-3">
@@ -83,6 +83,18 @@
                     <div class="input-group-append">
                         <div class="input-group-text"><span class="fas fa-lock"></span></div>
                     </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="file"
+                           name="file"
+                           class="form-control @error('file') is-invalid @enderror"
+                           placeholder="Upload file">
+                    @error('file')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
 
                 <div class="row">

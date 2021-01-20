@@ -51,10 +51,10 @@
             @if($stars)
             @foreach($stars as $star)
             <!-- si l'id de $star est égal à l'id de $firstStar, alors la description est ouverte par défaut -->
-            <div syle="padding-bottom: 30px;" class="panel ($firstStar->id ===  $star->id) ? 'active' : ''"> 
-                <div class="acc-header" style="font-weight: bold;">{{ $star->nom}}&nbsp;{{ $star->prenom}}</div>
-                <div class="acc-body" style="min-height: 150px;">
-                    <span style="margin-bottom: 30px;"><img align="left" style="width: 100px; height: 100px; margin: 6px 10px 0px 0px;" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/></span>
+            <div class="panel ($firstStar->id ===  $star->id) ? 'active' : ''"> 
+                <div class="acc-header">{{ $star->nom}}&nbsp;{{ $star->prenom}}</div>
+                <div class="acc-body">
+                    <span class="img-span"><img align="left" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/></span>
                     <span>{{ $star->description}}</span>
                 </div>
             </div>
@@ -63,6 +63,7 @@
         </div>
     
     </div>
+    
     <script type="text/javascript" src="{{ asset('js/stars-index.js') }}"></script>
 </body>
 </html>

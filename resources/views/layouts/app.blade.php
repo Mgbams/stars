@@ -34,16 +34,34 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
-                         class="user-image img-circle elevation-2" alt="User Image">
+                    @if(Auth::user())
+                        @if(Auth::user()->photo !== "avatar1.png")
+                        <img src="images/users/{{Auth::user()->id}}/{{Auth::user()->photo}}"
+                            alt="user image"
+                            class="brand-image img-circle elevation-3" style="width: 30px; height: 30px;" />
+                        @else
+                        <img src="images/avatar/{{Auth::user()->photo}}"
+                            alt="avatar image"
+                            class="brand-image img-circle elevation-3"
+                            style="width: 50px !important; height: 50px; !important" />
+                        @endif
+                    @endif
                     <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-primary">
-                        <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
-                             class="img-circle elevation-2"
-                             alt="User Image">
+                        @if(Auth::user())
+                            @if(Auth::user()->photo !== "avatar1.png")
+                            <img src="images/users/{{Auth::user()->id}}/{{Auth::user()->photo}}"
+                                alt="user image"
+                                class="brand-image img-circle elevation-3" />
+                            @else
+                            <img src="images/avatar/{{Auth::user()->photo}}"
+                                alt="avatar image"
+                                class="brand-image img-circle elevation-3" />
+                            @endif
+                        @endif
                         <p>
                             {{ Auth::user()->name }}
                             <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>

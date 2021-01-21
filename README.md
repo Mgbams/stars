@@ -60,3 +60,8 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 -   User
     email: king@gmail.com
     password: testpassword
+
+## Packages
+
+[html purifier](https://github.com/mewebstudio/Purifier)
+[tinyMCE](https://www.tiny.cloud/)

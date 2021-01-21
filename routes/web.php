@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::resource('stars', StarController::class);
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,11 +13,14 @@ Route::resource('stars', StarController::class);
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', 'HomeController@show')->name('stars.main.page');
+
+Route::resource('stars', StarController::class);
 
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('home');
+Route::get('dashboard', 'HomeController@index')->name('home');
 
 Auth::routes();
 

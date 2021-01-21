@@ -15,7 +15,8 @@
         "infyomlabs/laravel-ui-adminlte": "^2.0",
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
-        "laravelcollective/html": "^6.2"
+        "laravelcollective/html": "^6.2",
+        "mews/purifier": "^3.3"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

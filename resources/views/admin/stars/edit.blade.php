@@ -2,6 +2,17 @@
 
 @section('title', 'Create a Star profile')
 
+@section('third_party_scripts')
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+        selector:'textarea',
+        plugins:'code',
+        menubar:false
+        });
+  </script>
+@endsection
+
 @section('content')
     <!--Message de réussite lors de la soumission du formulaire-->
     @if(Session::has('success'))

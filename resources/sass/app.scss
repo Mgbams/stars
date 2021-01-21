@@ -5,6 +5,7 @@
 @import "~admin-lte/build/scss/AdminLTE";
 
 .dashboard-hidden {
+    //Le texte "Dashboard" masqué sur grand écran
     text-align: center;
     margin: auto;
     display: none;
@@ -12,8 +13,10 @@
 }
 
 #top-right-links {
+    // Donne un index à la barre supérieure pour qu'elle reste au-dessus des autres éléments
     z-index: 10;
 }
+
 /*
     =========================================
        Formatting of login and register page
@@ -37,69 +40,90 @@
 }
 
 /*
-    =============================
-        stars lists page formats
-    =============================
+*   =================================
+*       Tabbed outputs on stars page
+*   =================================
 */
 .main {
-    width: 100% !important;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    margin: auto;
 
-    .page-title {
-        text-align: center;
+    #stars-lists {
+        display: none; // Hide this block of code on large screen
+    }
+    .startabs {
+        display: flex;
+        border: 1px solid #cccccc;
+        width: 70%;
+        margin: 20px auto 50px auto;
+    }
+
+    .startabs_sidebar {
+        width: 250px;
+        flex-shrink: 0;
+    }
+
+    .startabs_button {
+        display: block;
+        padding: 10px;
+
+        background: #ddd;
+        box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+        border: none;
+        width: 100%;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .startabs_button:active {
+        background: #dddddd;
+    }
+
+    .startabs_button:not(:last-of-type) {
+        border-bottom: 1px solid white;
+    }
+
+    .startabs_button_active {
+        // active button class style
+        font-weight: bold;
+        border-right: none;
+        background: white;
+    }
+
+    .startabs_contents {
+        padding: 15px;
+        font-size: 0.8rem;
+        display: none;
+        background: white;
+
+        .img-span {
+            margin-bottom: 30px;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            margin: 6px 10px 0px 0px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+        }
+    }
+
+    .startabs_contents_active {
+        // active content class styling
+        display: block;
+    }
+
+    .startabs_contents > :first-child {
+        //Margin top of the first child of our stars content
+        margin-top: 0;
+    }
+
+    .page-title-container {
+        display: flex;
+        justify-content: center;
         margin-top: 100px;
     }
-
-    img {
-        width: 120px;
-        height: 120px;
-        margin: 6px 10px 0px 0px;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        padding: 5px;
-    }
-}
-/** This class will hide the stars description by default **/
-#stars-lists .acc-body {
-    display: none;
-    min-height: 150px;
-    .img-span {
-        margin-bottom: 30px;
-    }
-    padding-right: 10px;
-}
-
-/** This class will show the description if it has a parent with active class 
-**  and will change the background colours to white
-**/
-#stars-lists .active {
-    .acc-body,
-    .acc-header {
-        display: block;
-        background-color: white !important;
-    }
-}
-
-#stars-lists .panel {
-    color: #444;
-    border: 1px solid #ccc;
-    background: #ddd;
-    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    vertical-align: middle;
-}
-
-#stars-lists .acc-header,
-.acc-body {
-    padding-left: 10px;
-}
-
-#stars-lists .acc-header {
-    font-weight: bold;
 }
 
 /* 
@@ -270,16 +294,83 @@ label {
     ==========================
 */
 
-@media only screen and (min-width: 768px) {
-    .main {
-        width: 80% !important;
-    }
-}
-
 @media only screen and (max-width: 600px) {
-    .main {
-        margin-top: 100px !important;
+    .startabs {
+        display: none !important; // hide this design for small screen
     }
+
+    /*
+    *   =============================
+    *       stars lists page formats
+    *   =============================
+    */
+
+    .main {
+        width: 100% !important;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        .page-title {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            margin: 6px 10px 0px 0px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        #stars-lists {
+            display: block; // show on small screen
+        }
+    }
+    /** This class will hide the stars description by default **/
+    #stars-lists .acc-body {
+        display: none;
+        min-height: 150px;
+        .img-span {
+            margin-bottom: 30px;
+        }
+        padding-right: 10px;
+    }
+
+    /** This class will show the description if it has a parent with active class 
+    **  and will change the background colours to white
+    **/
+    #stars-lists .active {
+        .acc-body,
+        .acc-header {
+            display: block;
+            background-color: white !important;
+        }
+    }
+
+    #stars-lists .panel {
+        color: #444;
+        border: 1px solid #ccc;
+        background: #ddd;
+        box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        vertical-align: middle;
+    }
+
+    #stars-lists .acc-header,
+    .acc-body {
+        padding-left: 10px;
+    }
+
+    #stars-lists .acc-header {
+        font-weight: bold;
+    }
+
+    //list page of starsin admin panel
     #top-right-links {
         margin-bottom: 100px;
         z-index: 10;
@@ -427,4 +518,10 @@ label {
     #delete {
         margin-top: 20px;
     }
+}
+
+@media only screen and (min-width: 768px) {
+    // .main {
+    //     width: 80% !important;
+    // }
 }

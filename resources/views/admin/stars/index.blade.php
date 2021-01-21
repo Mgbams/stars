@@ -70,7 +70,12 @@
                     <td class="hide-on-small-screen"><img src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}"/></td>
                     <td> {{ $star->nom }} </td>
                     <td>{{ $star->prenom }}</td>
-                    <td  style="width: 35%;">{{ $star->description }}</td>
+                    <td  style="width: 35%;">
+                    <!-- Affichez seulement 100 caractères à partir de la première position 
+                    et ajoutez des points de suspension si la longueur de la chaîne est supérieure à 100. -->
+                        {{ substr(strip_tags($star->description), 0, 100) }}
+                        {{ strlen(strip_tags($star->description)) > 100 ? '...' : ''}}
+                    </td>
                     <td class="action-buttons">
                         <a id="edit" class="crud-links" href="{{ route('stars.edit', ['star' => $star->id]) }}">
                             <i class="far fa-md fa-edit"></i>&nbsp; Edit 

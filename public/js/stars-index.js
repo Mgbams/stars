@@ -93,6 +93,45 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function launchStarTabs() {
+  document.querySelectorAll(".startabs_button").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var startabsSidebar = button.parentElement;
+      var starTabs = startabsSidebar.parentElement;
+      var starTabsNumber = button.dataset.forTab; // get the id of each star
+      // select content with data-tab = startTabsNumber.  It selects a content with corresponding data-tab number
+
+      var tabsToShow = starTabs.querySelector(".startabs_contents[data-tab=\"".concat(starTabsNumber, "\"]"));
+      startabsSidebar.querySelectorAll(".startabs_button").forEach(function (button) {
+        //First remove the active class from all buttons on click
+        button.classList.remove("startabs_button_active");
+      });
+      starTabs.querySelectorAll(".startabs_contents").forEach(function (content) {
+        //First remove the active class from all contents when a button is clicked
+        content.classList.remove("startabs_contents_active");
+      });
+      button.classList.add("startabs_button_active"); //Re-apply active class to the clicked button
+      //Re-apply active class to the corresponding content so it can be displayed
+
+      tabsToShow.classList.add("startabs_contents_active");
+    });
+  });
+} // Call the launchStarTabs function
+
+
+launchStarTabs(); // On page load make a click dynamically to attach .startabs_contents_active class
+// and startabs_button_active class to the first element of starTabs div
+
+document.querySelectorAll(".startabs").forEach(function (starTabs) {
+  starTabs.querySelector(".startabs_sidebar .startabs_button").click();
+});
+/***
+ * ==========================
+ * Small scrren display code
+ * ==========================
+ * 
+ */
+
 function accordionController(accordionElem) {
   //when panel is clicked, handlePanelClick is called.
   function handlePanelClick(event) {
@@ -122,7 +161,10 @@ function accordionController(accordionElem) {
   showPanel(allPanelElems[0]);
 }
 
-accordionController(document.getElementById("stars-lists"));
+if (document.getElementById("stars-lists")) {
+  // call this function when star-lists element comes into view
+  accordionController(document.getElementById("stars-lists"));
+}
 
 /***/ }),
 

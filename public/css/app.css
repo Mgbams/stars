@@ -32726,25 +32726,68 @@ a.text-muted:hover {
 }
 
 /*
-    =============================
-        stars lists page formats
-    =============================
+*   =================================
+*       Tabbed outputs on stars page
+*   =================================
 */
 
 .main {
-  width: 100% !important;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
 }
 
-.main .page-title {
-  text-align: center;
-  margin-top: 100px;
+.main #stars-lists {
+  display: none;
 }
 
-.main img {
+.main .startabs {
+  display: flex;
+  border: 1px solid #cccccc;
+  width: 70%;
+  margin: 20px auto 50px auto;
+}
+
+.main .startabs_sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.main .startabs_button {
+  display: block;
+  padding: 10px;
+  background: #ddd;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+  border: none;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+}
+
+.main .startabs_button:active {
+  background: #dddddd;
+}
+
+.main .startabs_button:not(:last-of-type) {
+  border-bottom: 1px solid white;
+}
+
+.main .startabs_button_active {
+  font-weight: bold;
+  border-right: none;
+  background: white;
+}
+
+.main .startabs_contents {
+  padding: 15px;
+  font-size: 0.8rem;
+  display: none;
+  background: white;
+}
+
+.main .startabs_contents .img-span {
+  margin-bottom: 30px;
+}
+
+.main .startabs_contents img {
   width: 120px;
   height: 120px;
   margin: 6px 10px 0px 0px;
@@ -32753,44 +32796,18 @@ a.text-muted:hover {
   padding: 5px;
 }
 
-/** This class will hide the stars description by default **/
-
-#stars-lists .acc-body {
-  display: none;
-  min-height: 150px;
-  padding-right: 10px;
-}
-
-#stars-lists .acc-body .img-span {
-  margin-bottom: 30px;
-}
-
-/** This class will show the description if it has a parent with active class 
-**  and will change the background colours to white
-**/
-
-#stars-lists .active .acc-body,
-#stars-lists .active .acc-header {
+.main .startabs_contents_active {
   display: block;
-  background-color: white !important;
 }
 
-#stars-lists .panel {
-  color: #444;
-  border: 1px solid #ccc;
-  background: #ddd;
-  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  vertical-align: middle;
+.main .startabs_contents > :first-child {
+  margin-top: 0;
 }
 
-#stars-lists .acc-header,
-.acc-body {
-  padding-left: 10px;
-}
-
-#stars-lists .acc-header {
-  font-weight: bold;
+.main .page-title-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 
 /* 
@@ -32955,15 +32972,81 @@ label {
     ==========================
 */
 
-@media only screen and (min-width: 768px) {
-  .main {
-    width: 80% !important;
-  }
-}
-
 @media only screen and (max-width: 600px) {
+  .startabs {
+    display: none !important;
+  }
+
+  /*
+  *   =============================
+  *       stars lists page formats
+  *   =============================
+  */
+
   .main {
-    margin-top: 100px !important;
+    width: 100% !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .main .page-title {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .main img {
+    width: 120px;
+    height: 120px;
+    margin: 6px 10px 0px 0px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+  }
+
+  .main #stars-lists {
+    display: block;
+  }
+
+  /** This class will hide the stars description by default **/
+
+  #stars-lists .acc-body {
+    display: none;
+    min-height: 150px;
+    padding-right: 10px;
+  }
+
+  #stars-lists .acc-body .img-span {
+    margin-bottom: 30px;
+  }
+
+  /** This class will show the description if it has a parent with active class 
+  **  and will change the background colours to white
+  **/
+
+  #stars-lists .active .acc-body,
+  #stars-lists .active .acc-header {
+    display: block;
+    background-color: white !important;
+  }
+
+  #stars-lists .panel {
+    color: #444;
+    border: 1px solid #ccc;
+    background: #ddd;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  #stars-lists .acc-header,
+  .acc-body {
+    padding-left: 10px;
+  }
+
+  #stars-lists .acc-header {
+    font-weight: bold;
   }
 
   #top-right-links {

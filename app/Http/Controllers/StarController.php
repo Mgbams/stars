@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Star;
 use App\Repositories\StarRepository;
 use File;
+use Purifier;
 
 class StarController extends Controller
 {
@@ -77,7 +78,7 @@ class StarController extends Controller
                     'nom'           =>  $nom,
                     'prenom'        =>  $prenom,
                     'image'         =>  $uniqueFileName,
-                    'description'   =>  $request->description,
+                    'description'   =>  Purifier::clean($request->description), //filter input with purifier
                 ]
             );
 
@@ -155,7 +156,7 @@ class StarController extends Controller
                 'nom'           =>  $nom,
                 'prenom'        =>  $prenom,
                 'image'         =>  $uniqueFileName,
-                'description'   =>  $request->description,
+                'description'   =>  Purifier::clean($request->description), //filter input with purifier
              );
 
             // mettre à jour la base de données où id est égal à star_id

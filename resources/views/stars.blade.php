@@ -15,7 +15,7 @@
         
 </head>
 <body>
-    <div class="flex-center position-ref full-height">
+    <div class="flex-center position-ref">
         @if (Route::has('login'))
             <div class="top-right links" id="top-right-links">
                
@@ -43,10 +43,14 @@
             </div>
         @endif
     </div>
-    <div class="main">
-        <div class="page-title">
-            <h1>Profile Browser</h1>
+    
+    <!-- Page contents starts here -->
+   <div class="main">
+        <div class="page-title-container">
+            <h1 class="page-title">Profile Browser</h1>
         </div>
+
+        <!-- displayed on small screens -->
         <div id="stars-lists">
             @if($stars)
             @foreach($stars as $star)
@@ -55,15 +59,39 @@
                 <div class="acc-header">{{ $star->nom}}&nbsp;{{ $star->prenom}}</div>
                 <div class="acc-body">
                     <span class="img-span"><img align="left" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/></span>
-                    <span>{{ $star->description}}</span>
+                    <span>{!! $star->description !!}</span>
                 </div>
             </div>
             @endforeach
             @endif
         </div>
-    
-    </div>
-    
+        <!-- displayed on small screen ends here -->
+
+        <div class="startabs">
+            <div class="startabs_sidebar">
+                @if($stars)
+                    @foreach($stars as $star)
+                        <button class="startabs_button" data-for-tab="{{ $star->id}}">
+                            {{ $star->nom}}&nbsp;{{ $star->prenom}}
+                        </button>
+                    @endforeach
+                @endif
+            </div>
+
+            @if($stars)
+                @foreach($stars as $star)
+                    <div class="startabs_contents" data-tab="{{ $star->id}}">
+                        <span class="img-span">
+                            <img align="left" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/>
+                        </span>
+                        <span>{!! $star->description !!}</span>
+                    </div>
+                @endforeach
+            @endif
+
+        </div>
+   </div>
+
     <script type="text/javascript" src="{{ asset('js/stars-index.js') }}"></script>
 </body>
 </html>

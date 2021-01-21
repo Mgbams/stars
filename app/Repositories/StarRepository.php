@@ -73,6 +73,20 @@ class StarRepository
         return $star;
     }
 
+
+       /**
+        * View a single star by its id
+        *
+        * @param int
+        * @return collection
+    */
+
+    public function viewById($id)
+    {
+        $star= Star::where('id', $id)->first();
+
+        return $star;
+    }
     
     /**
         * paginate stars received from database

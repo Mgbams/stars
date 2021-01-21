@@ -326,6 +326,88 @@ label {
 
 /* 
     ==========================
+        Show Page
+    ==========================
+*/
+
+.show-page-inner-div {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    margin: 50px auto 0px auto;
+    border: thin silver solid;
+    width: 80%;
+    padding-left: 15px;
+
+    //Css pour le bouton d'édition et de suppression.
+    .action-buttons-container {
+        width: 47%;
+        margin-top: 20px;
+
+        .action-buttons {
+            display: flex;
+            justify-content: flex-start;
+
+            .crud-links {
+                margin-right: 50px;
+            }
+
+            #edit {
+                border: 2px solid $blue;
+                width: 100px;
+                height: 30px;
+                text-align: center;
+            }
+
+            #edit:hover,
+            #edit:active {
+                background-color: $blue;
+                color: white;
+            }
+
+            #delete {
+                border: 2px solid red;
+                width: 100px;
+                height: 30px;
+            }
+
+            #delete:hover,
+            #delete:active {
+                background-color: red;
+                color: white;
+
+                .fa-trash {
+                    color: white !important;
+                }
+            }
+        }
+    }
+}
+
+.show-page-nom-prenom-container {
+    width: 50%;
+    border: thin silver solid;
+
+    .nom-pronom {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 35%;
+
+        p:first-of-type {
+            width: 80px;
+            color: green;
+            margin-right: 15px;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+/* 
+    ==========================
         Media Queries
     ==========================
 */
@@ -370,7 +452,7 @@ label {
     /** This class will hide the stars description by default **/
     #stars-lists .acc-body {
         display: none;
-        min-height: 150px;
+        //min-height: 150px;
         .img-span {
             margin-bottom: 30px;
         }
@@ -450,7 +532,7 @@ label {
     /*Animation functionality*/
     @-webkit-keyframes slide-up {
         0% {
-            min-height: 0;
+            height: 0;
         }
 
         25% {

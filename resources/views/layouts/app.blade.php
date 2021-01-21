@@ -36,11 +36,11 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                     @if(Auth::user())
                         @if(Auth::user()->photo !== "avatar1.png")
-                        <img src="images/users/{{Auth::user()->id}}/{{Auth::user()->photo}}"
+                        <img src="/images/users/{{Auth::user()->id}}/{{Auth::user()->photo}}"
                             alt="user image"
                             class="brand-image img-circle elevation-3" style="width: 30px; height: 30px;" />
                         @else
-                        <img src="images/avatar/{{Auth::user()->photo}}"
+                        <img src="/images/avatar/{{Auth::user()->photo}}"
                             alt="avatar image"
                             class="brand-image img-circle elevation-3"
                             style="width: 50px !important; height: 50px; !important" />
@@ -53,11 +53,11 @@
                     <li class="user-header bg-primary">
                         @if(Auth::user())
                             @if(Auth::user()->photo !== "avatar1.png")
-                            <img src="images/users/{{Auth::user()->id}}/{{Auth::user()->photo}}"
+                            <img src="/images/users/{{Auth::user()->id}}/{{Auth::user()->photo}}"
                                 alt="user image"
                                 class="brand-image img-circle elevation-3" />
                             @else
-                            <img src="images/avatar/{{Auth::user()->photo}}"
+                            <img src="/images/avatar/{{Auth::user()->photo}}"
                                 alt="avatar image"
                                 class="brand-image img-circle elevation-3" />
                             @endif

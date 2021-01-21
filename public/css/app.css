@@ -33014,6 +33014,88 @@ label {
 
 /* 
     ==========================
+        Show Page
+    ==========================
+*/
+
+.show-page-inner-div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  margin: 50px auto 0px auto;
+  border: thin silver solid;
+  width: 80%;
+  padding-left: 15px;
+}
+
+.show-page-inner-div .action-buttons-container {
+  width: 47%;
+  margin-top: 20px;
+}
+
+.show-page-inner-div .action-buttons-container .action-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.show-page-inner-div .action-buttons-container .action-buttons .crud-links {
+  margin-right: 50px;
+}
+
+.show-page-inner-div .action-buttons-container .action-buttons #edit {
+  border: 2px solid #0275d8;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+}
+
+.show-page-inner-div .action-buttons-container .action-buttons #edit:hover,
+.show-page-inner-div .action-buttons-container .action-buttons #edit:active {
+  background-color: #0275d8;
+  color: white;
+}
+
+.show-page-inner-div .action-buttons-container .action-buttons #delete {
+  border: 2px solid red;
+  width: 100px;
+  height: 30px;
+}
+
+.show-page-inner-div .action-buttons-container .action-buttons #delete:hover,
+.show-page-inner-div .action-buttons-container .action-buttons #delete:active {
+  background-color: red;
+  color: white;
+}
+
+.show-page-inner-div .action-buttons-container .action-buttons #delete:hover .fa-trash,
+.show-page-inner-div .action-buttons-container .action-buttons #delete:active .fa-trash {
+  color: white !important;
+}
+
+.show-page-nom-prenom-container {
+  width: 50%;
+  border: thin silver solid;
+}
+
+.show-page-nom-prenom-container .nom-pronom {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 35%;
+}
+
+.show-page-nom-prenom-container .nom-pronom p:first-of-type {
+  width: 80px;
+  color: green;
+  margin-right: 15px;
+}
+
+.show-page-nom-prenom-container img {
+  width: 100%;
+  height: 400px;
+}
+
+/* 
+    ==========================
         Media Queries
     ==========================
 */
@@ -33059,7 +33141,6 @@ label {
 
   #stars-lists .acc-body {
     display: none;
-    min-height: 150px;
     padding-right: 10px;
   }
 
@@ -33136,7 +33217,7 @@ label {
 
 @-webkit-keyframes slide-up {
     0% {
-      min-height: 0;
+      height: 0;
     }
 
     25% {

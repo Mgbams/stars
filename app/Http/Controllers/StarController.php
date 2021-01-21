@@ -90,7 +90,8 @@ class StarController extends Controller
             }
         }
         
-        return back()->with('success', 'Your form has been submitted.');
+        //rediriger sur la page show
+        return redirect()->route('stars.show', $star->id)->with('success', 'Votre formulaire a été soumis avec succès.');
     }
 
     /**
@@ -101,7 +102,10 @@ class StarController extends Controller
      */
     public function show($id)
     {
-        //
+        // view star by id
+        $star = $this->starRepository->viewById($id);
+
+        return view('admin.stars.show', compact('star'));
     }
 
     /**
@@ -180,8 +184,9 @@ class StarController extends Controller
             
             $star = $this->starRepository->updateStarById($request->star_id, $form_data);
         }
-        
-        return back()->with('success', 'Vos données ont été mises à jour avec succès.');
+
+        //rediriger sur la page show
+        return redirect()->route('stars.show', $id)->with('success', 'Vos données ont été mises à jour avec succès.');
     }
 
     /**

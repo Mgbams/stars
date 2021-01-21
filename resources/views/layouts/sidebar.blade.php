@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="{{ route('stars.main.page') }}" class="brand-link">
-        <img src="images/avatar/hello-1.jpg"
+        <img src="/images/avatar/hello-1.jpg"
                 alt="logo"
                 class="brand-image img-circle elevation-3" />
         <span class="brand-text font-weight-light">HomePage</span>

@@ -32956,11 +32956,24 @@ label {
 
 #stars-table-wrapper #star-add-table #edit {
   border: 2px solid #0275d8;
+  color: #0275d8;
 }
 
 #stars-table-wrapper #star-add-table #edit:hover,
 #stars-table-wrapper #star-add-table #edit:active {
   background-color: #0275d8;
+  color: white;
+}
+
+#stars-table-wrapper #star-add-table #view {
+  border: 2px solid #6ead50;
+  color: #0d6628;
+}
+
+#stars-table-wrapper #star-add-table #view:hover,
+#stars-table-wrapper #star-add-table #view:active {
+  background-color: #0d6628;
+  color: white;
 }
 
 #stars-table-wrapper #star-add-table #delete {
@@ -33017,6 +33030,18 @@ label {
         Show Page
     ==========================
 */
+
+.date-created {
+  margin-bottom: -20px;
+}
+
+.date-created .name {
+  text-align: center;
+}
+
+.date-created .name:first-of-type {
+  color: #0275d8;
+}
 
 .show-page-inner-div {
   display: flex;
@@ -33075,6 +33100,8 @@ label {
 .show-page-nom-prenom-container {
   width: 50%;
   border: thin silver solid;
+  border-top: none;
+  border-right: none;
 }
 
 .show-page-nom-prenom-container .nom-pronom {
@@ -33092,6 +33119,11 @@ label {
 .show-page-nom-prenom-container img {
   width: 100%;
   height: 400px;
+  padding: 0.5em;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
 }
 
 /* 
@@ -33260,6 +33292,22 @@ label {
       height: auto;
     }
 }
+
+  /*
+  *   =====================
+  *    Show page formatting
+  *   ======================
+  */
+
+  .show-page-inner-div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .show-page-inner-div .action-buttons-container,
+  .show-page-inner-div .show-page-nom-prenom-container {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 800px) {

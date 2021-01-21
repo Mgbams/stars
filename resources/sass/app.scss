@@ -266,11 +266,24 @@ label {
 
         #edit {
             border: 2px solid $blue;
+            color: $blue;
         }
 
         #edit:hover,
         #edit:active {
             background-color: $blue;
+            color: white;
+        }
+
+        #view {
+            border: 2px solid #6ead50;
+            color: #0d6628;
+        }
+
+        #view:hover,
+        #view:active {
+            background-color: #0d6628;
+            color: white;
         }
 
         #delete {
@@ -330,6 +343,18 @@ label {
     ==========================
 */
 
+.date-created {
+    margin-bottom: -20px;
+
+    .name {
+        text-align: center;
+    }
+
+    .name:first-of-type {
+        color: $blue;
+    }
+}
+
 .show-page-inner-div {
     display: flex;
     justify-content: space-between;
@@ -387,6 +412,8 @@ label {
 .show-page-nom-prenom-container {
     width: 50%;
     border: thin silver solid;
+    border-top: none;
+    border-right: none;
 
     .nom-pronom {
         display: flex;
@@ -403,6 +430,11 @@ label {
     img {
         width: 100%;
         height: 400px;
+        padding: 0.5em;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
     }
 }
 
@@ -617,6 +649,21 @@ label {
 
         100% {
             height: auto;
+        }
+    }
+
+    /*
+    *   =====================
+    *    Show page formatting
+    *   ======================
+    */
+    .show-page-inner-div {
+        flex-direction: column;
+        width: 100%;
+
+        .action-buttons-container,
+        .show-page-nom-prenom-container {
+            width: 100%;
         }
     }
 }

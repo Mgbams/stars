@@ -40,6 +40,7 @@ class HomeController extends Controller
     {
          $firstStar = $this->starRepository->getFirstStar(); // première star dans la base de données
 
+         //dd($firstStar);
          $stars =  $this->starRepository->getAllStars();
 
         return view('stars', compact('stars', 'firstStar'));

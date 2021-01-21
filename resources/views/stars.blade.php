@@ -46,12 +46,12 @@
     
     <!-- Page contents starts here -->
    <div class="main">
-        <div class="page-title-container">
-            <h1 class="page-title">Profile Browser</h1>
-        </div>
-
+        
         <!-- displayed on small screens -->
         <div id="stars-lists">
+            <div class="page-title-container">
+                <h1 class="page-title">Profile Browser</h1>
+            </div>
             @if($stars)
             @foreach($stars as $star)
             <!-- si l'id de $star est égal à l'id de $firstStar, alors la description est ouverte par défaut -->
@@ -66,12 +66,17 @@
             @endif
         </div>
         <!-- displayed on small screen ends here -->
-
-        <div class="startabs">
-            <div class="startabs_sidebar">
+        
+        <div class="startabs-parent-container">
+            <div class="page-title-container">
+                <h1 class="page-title">Profile Browser</h1>
+            </div>
+            <div  class="startabs">
+                <div class="startabs_sidebar">
                 @if($stars)
                     @foreach($stars as $star)
-                        <button class="startabs_button" data-for-tab="{{ $star->id}}">
+                    <!--if star->id === $firstStar->id then give the button a rounded-border class -->
+                        <button class="startabs_button {{ ($firstStar[0]->id === $star->id) ? 'rounded-border' : ''}}" data-for-tab="{{ $star->id}}">
                             {{ $star->nom}}&nbsp;{{ $star->prenom}}
                         </button>
                     @endforeach
@@ -89,6 +94,8 @@
                 @endforeach
             @endif
 
+            </div>
+            
         </div>
    </div>
 

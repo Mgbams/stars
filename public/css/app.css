@@ -32739,16 +32739,29 @@ a.text-muted:hover {
   display: none;
 }
 
+.main .startabs-parent-container {
+  border: 1px solid #cccccc;
+  width: 60%;
+  margin: 100px auto 40px auto;
+}
+
 .main .startabs {
   display: flex;
-  border: 1px solid #cccccc;
-  width: 70%;
-  margin: 20px auto 50px auto;
+  padding-bottom: 50px;
+  padding-left: 50px;
+}
+
+.main .startabs_button:last-child {
+  border-bottom-left-radius: 18px;
 }
 
 .main .startabs_sidebar {
   width: 250px;
   flex-shrink: 0;
+}
+
+.main .rounded-border {
+  border-top-left-radius: 18px;
 }
 
 .main .startabs_button {
@@ -32807,7 +32820,40 @@ a.text-muted:hover {
 .main .page-title-container {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  /*   =======================
+  *       Animate page title
+  *    =======================
+  */
+}
+
+.main .page-title-container .page-title {
+  position: relative;
+  -webkit-animation-name: top-down;
+          animation-name: top-down;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes top-down {
+  0% {
+    top: -200px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes top-down {
+  0% {
+    top: -200px;
+  }
+
+  100% {
+    top: 0px;
+  }
 }
 
 /* 
@@ -32973,7 +33019,7 @@ label {
 */
 
 @media only screen and (max-width: 600px) {
-  .startabs {
+  .startabs-parent-container {
     display: none !important;
   }
 
@@ -32991,11 +33037,6 @@ label {
     transform: translate(-50%, -50%);
   }
 
-  .main .page-title {
-    text-align: center;
-    margin-top: 100px;
-  }
-
   .main img {
     width: 120px;
     height: 120px;
@@ -33007,6 +33048,11 @@ label {
 
   .main #stars-lists {
     display: block;
+  }
+
+  .page-title-container {
+    margin-top: 200px !important;
+    z-index: 1;
   }
 
   /** This class will hide the stars description by default **/

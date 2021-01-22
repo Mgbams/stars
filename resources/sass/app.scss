@@ -1,8 +1,22 @@
 // Variables
 @import "variables";
 
-// Bootstrap
+//Admin LTE panel
 @import "~admin-lte/build/scss/AdminLTE";
+
+/*
+    =============== 
+    Global Styles
+    ===============
+*/
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .dashboard-hidden {
     //Le texte "Dashboard" masqué sur grand écran
@@ -26,11 +40,11 @@
     display: inline-block;
     border-radius: 25px;
     padding-top: 5px;
-    background-color: #ddd;
+    background-color: $button_color;
 }
 
 .brand-link:hover {
-    color: white;
+    color: $white;
 }
 
 /*
@@ -42,8 +56,8 @@
 .register-box .card,
 .login-page .card {
     form {
-        border: 1px solid #1aa3ff62;
-        background: #ecf5fc;
+        border: 1px solid $form_border_color;
+        background: $register_login_background;
         padding: 5px 8px 5px;
     }
 }
@@ -52,13 +66,13 @@
 .login-logo a:hover {
     font-size: 38px;
     margin-bottom: 10px;
-    color: blue !important;
+    color: $form_link_text_color !important;
 }
 
 /*
-*   =================================
-*       Tabbed outputs on stars page
-*   =================================
+   =================================
+       Tabbed outputs on stars page
+   =================================
 */
 .main {
     margin: auto;
@@ -68,7 +82,7 @@
     }
 
     .startabs-parent-container {
-        border: 1px solid #cccccc;
+        border: 1px solid $container_border_color;
         width: 60%;
         margin: 100px auto 40px auto;
     }
@@ -98,8 +112,8 @@
         display: block;
         padding: 10px;
 
-        background: #ddd;
-        box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+        background: $button_color;
+        box-shadow: 0 0 5px -1px $container_box_shadow_color;
         border: none;
         width: 100%;
         outline: none;
@@ -107,25 +121,25 @@
     }
 
     .startabs_button:active {
-        background: #dddddd;
+        background: $button_color;
     }
 
     .startabs_button:not(:last-of-type) {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $white;
     }
 
     .startabs_button_active {
         // active button class style
         font-weight: bold;
         border-right: none;
-        background: white;
+        background: $white;
     }
 
     .startabs_contents {
         padding: 15px;
         font-size: 0.8rem;
         display: none;
-        background: white;
+        background: $white;
 
         .img-span {
             margin-bottom: 30px;
@@ -135,7 +149,7 @@
             width: 120px;
             height: 120px;
             margin: 6px 10px 0px 0px;
-            border: 2px solid #ddd;
+            border: 2px solid $button_color;
             border-radius: 8px;
             padding: 5px;
         }
@@ -155,9 +169,10 @@
         display: flex;
         justify-content: center;
 
-        /*   =======================
-        *       Animate page title
-        *    =======================
+        /*  
+            =======================
+              Animate page title
+            =======================
         */
         .page-title {
             position: relative;
@@ -191,16 +206,16 @@
     margin: auto;
 
     form {
-        border: 1px solid #1aa3ff62;
-        background: #ecf5fc;
+        border: 1px solid $form_border_color;
+        background: $register_login_background;
         padding: 40px 50px 45px;
     }
 }
 
 form-control:focus {
-    border-color: #000;
+    border-color: $black;
     box-shadow: none;
-    color: black;
+    color: $black;
 }
 
 label {
@@ -208,7 +223,7 @@ label {
 }
 
 .error {
-    color: red;
+    color: $red;
     font-weight: 400;
     display: block;
     padding: 6px 0;
@@ -216,7 +231,7 @@ label {
 }
 
 .form-control.error {
-    border-color: red;
+    border-color: $red;
     padding: 0.375rem 0.75rem;
 }
 
@@ -251,23 +266,23 @@ label {
         }
 
         th {
-            background-color: rgba(29, 150, 178, 1);
-            border: 1px solid rgba(29, 150, 178, 1);
+            background-color: $table_header_color;
+            border: 1px solid $table_header_color;
             font-weight: normal;
             text-align: center;
-            color: white;
+            color: $white;
         }
 
         tr:nth-of-type(even) {
-            background-color: rgba(94, 93, 82, 0.1);
+            background-color: $table_even_row_background_color;
         }
 
         // Styling the table links
 
         .crud-links:link,
         .crud-links:visited {
-            background-color: white;
-            color: black;
+            background-color: $white;
+            color: $black;
             width: 80px;
             height: 28px;
             text-align: center;
@@ -277,7 +292,7 @@ label {
 
         .crud-links:hover,
         .crud-links:active {
-            color: white;
+            color: $white;
         }
 
         #edit {
@@ -288,27 +303,27 @@ label {
         #edit:hover,
         #edit:active {
             background-color: $blue;
-            color: white;
+            color: $white;
         }
 
         #view {
-            border: 2px solid #6ead50;
-            color: #0d6628;
+            border: 2px solid $green_secondary;
+            color: $green_primary;
         }
 
         #view:hover,
         #view:active {
-            background-color: #0d6628;
-            color: white;
+            background-color: $green_primary;
+            color: $white;
         }
 
         #delete {
-            border: 2px solid red;
+            border: 2px solid $red;
         }
 
         #delete:hover,
         #delete:active {
-            background-color: red;
+            background-color: $red;
         }
 
         .action-buttons {
@@ -319,16 +334,16 @@ label {
 
     #create_record {
         background-color: $blue;
-        color: white;
+        color: $white;
         width: 62px;
         padding: 5px 10px;
         text-align: center;
     }
 
     #create_record:hover {
-        color: black;
-        border: 2px solid green;
-        background-color: white;
+        color: $black;
+        border: 2px solid $green_tertiary;
+        background-color: $white;
     }
 }
 
@@ -343,13 +358,13 @@ label {
     padding-left: 20px;
 
     .back-to-index-link {
-        background-color: white;
+        background-color: $white;
         width: 80px;
         height: 28px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        border: 1px solid green;
+        border: 1px solid $green_tertiary;
     }
 }
 
@@ -376,7 +391,7 @@ label {
     justify-content: space-between;
     padding-bottom: 50px;
     margin: 50px auto 0px auto;
-    border: thin silver solid;
+    border: thin $silver_color solid;
     width: 80%;
     padding-left: 15px;
 
@@ -403,22 +418,22 @@ label {
             #edit:hover,
             #edit:active {
                 background-color: $blue;
-                color: white;
+                color: $white;
             }
 
             #delete {
-                border: 2px solid red;
+                border: 2px solid $red;
                 width: 100px;
                 height: 30px;
             }
 
             #delete:hover,
             #delete:active {
-                background-color: red;
-                color: white;
+                background-color: $red;
+                color: $white;
 
                 .fa-trash {
-                    color: white !important;
+                    color: $white !important;
                 }
             }
         }
@@ -427,7 +442,7 @@ label {
 
 .show-page-nom-prenom-container {
     width: 50%;
-    border: thin silver solid;
+    border: thin $silver_color solid;
     border-top: none;
     border-right: none;
 
@@ -438,7 +453,7 @@ label {
 
         p:first-of-type {
             width: 80px;
-            color: green;
+            color: $green_tertiary;
             margin-right: 15px;
         }
     }
@@ -478,7 +493,7 @@ label {
             width: 120px;
             height: 120px;
             margin: 6px 10px 0px 0px;
-            border: 2px solid #ddd;
+            border: 2px solid $button_color;
             border-radius: 8px;
             padding: 5px;
         }
@@ -489,10 +504,7 @@ label {
     }
 
     .page-title-container {
-        margin-top: 50px;
-        .page-title {
-            z-index: 1;
-        }
+        margin-top: 20px;
     }
 
     /** This class will hide the stars description by default **/
@@ -512,15 +524,15 @@ label {
         .acc-body,
         .acc-header {
             display: block;
-            background-color: white !important;
+            background-color: $white !important;
         }
     }
 
     #stars-lists .panel {
-        color: #444;
-        border: 1px solid #ccc;
-        background: #ddd;
-        box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+        color: $primary_text_color;
+        border: 1px solid $container_border_color;
+        background: $button_color;
+        box-shadow: 0 0 5px -1px $container_box_shadow_color;
         cursor: pointer;
         vertical-align: middle;
     }
@@ -597,8 +609,6 @@ label {
 
         100% {
             height: auto;
-            padding-bottom: 60px;
-            background-color: yellow !important;
         }
     }
     @-moz-keyframes slide-up {
@@ -620,8 +630,6 @@ label {
 
         100% {
             height: auto;
-            padding-bottom: 60px;
-            background-color: yellow !important;
         }
     }
     @-o-keyframes slide-up {
@@ -642,8 +650,7 @@ label {
         }
 
         100% {
-            min-height: 400px;
-            padding-bottom: 60px;
+            min-height: auto;
         }
     }
     @keyframes slide-up {
@@ -718,10 +725,4 @@ label {
     #edit {
         margin-bottom: 10px;
     }
-}
-
-@media only screen and (min-width: 768px) {
-    // .main {
-    //     width: 80% !important;
-    // }
 }

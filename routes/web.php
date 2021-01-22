@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@show')->name('stars.main.page');
 
-Route::resource('stars', StarController::class);
-
 Auth::routes();
 
-Route::get('dashboard', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'dashboard', 'middleware' => 'isAdmin'], function() {
+    Route::resource('stars', StarController::class);
+});
+
+Route::get('dashboard', 'HomeController@index')->name('home')->middleware('isAdmin');
 
 Auth::routes();
 

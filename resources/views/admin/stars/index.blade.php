@@ -25,7 +25,7 @@
             <tbody>
             @foreach($stars as $star)
                 <tr>
-                    <td class="hide-on-small-screen"><img src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}"/></td>
+                    <td class="hide-on-small-screen"><img src="/images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}"/></td>
                     <td> {{ $star->nom }} </td>
                     <td>{{ $star->prenom }}</td>
                     <td  style="width: 35%;">

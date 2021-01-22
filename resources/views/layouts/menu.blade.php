@@ -13,7 +13,7 @@
 </li>
 
 <li class="nav-item {{ request()->is('stars') ? 'active' : ''}}">
-    <a href="{{ url('stars') }}" class="nav-link">
+    <a href="{{ url('dashboard/stars') }}" class="nav-link">
         <i class="fas fa-list-ul"></i>
         <p>Stars</p>
     </a>

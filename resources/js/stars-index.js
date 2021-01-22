@@ -3,8 +3,8 @@ function launchStarTabs() {
         button.addEventListener("click", () => {
             const startabsSidebar = button.parentElement;
             const starTabs = startabsSidebar.parentElement;
-            const starTabsNumber = button.dataset.forTab; // get the id of each star
-            // select content with data-tab = startTabsNumber.  It selects a content with corresponding data-tab number
+            const starTabsNumber = button.dataset.forTab; // obtenir l'identifiant de chaque star
+            // sélectionnez le contenu avec data-tab = startTabsNumber. Il sélectionne un contenu avec le numéro de l'onglet de données correspondant
             const tabsToShow = starTabs.querySelector(
                 `.startabs_contents[data-tab="${starTabsNumber}"]`
             );
@@ -12,28 +12,28 @@ function launchStarTabs() {
             startabsSidebar
                 .querySelectorAll(".startabs_button")
                 .forEach(button => {
-                    //First remove the active class from all buttons on click
+                    // Supprimez d'abord la classe active de tous les boutons en cliquant
                     button.classList.remove("startabs_button_active");
                 });
 
             starTabs.querySelectorAll(".startabs_contents").forEach(content => {
-                //First remove the active class from all contents when a button is clicked
+                // Supprimez d'abord la classe active de tout le contenu lorsqu'un bouton est cliqué
                 content.classList.remove("startabs_contents_active");
             });
 
-            button.classList.add("startabs_button_active"); //Re-apply active class to the clicked button
+            button.classList.add("startabs_button_active"); //Réappliquez la classe active au bouton cliqué
 
-            //Re-apply active class to the corresponding content so it can be displayed
+            //Réappliquez la classe active au contenu correspondant afin qu'il puisse être affiché
             tabsToShow.classList.add("startabs_contents_active");
         });
     });
 }
 
-// Call the launchStarTabs function
+// Appelez la fonction launchStarTabs
 launchStarTabs();
 
-// On page load make a click dynamically to attach .startabs_contents_active class
-// and startabs_button_active class to the first element of starTabs div
+// Faites un clic dynamiquement lors du chargement de la page pour attacher la classe .startabs_contents_active
+// et la classe startabs_button_active au premier élément de starTabs div
 document.querySelectorAll(".startabs").forEach(starTabs => {
     starTabs.querySelector(".startabs_sidebar .startabs_button").click();
 });
@@ -46,22 +46,22 @@ document.querySelectorAll(".startabs").forEach(starTabs => {
  */
 
 function accordionController(accordionElem) {
-    //when panel is clicked, handlePanelClick is called.
+    // Lorsque le panneau est cliqué, handlePanelClick est appelé.
 
     function handlePanelClick(event) {
         showPanel(event.currentTarget);
     }
 
-    //Hide currentPanel and show new panel.
+    //Masquer le panneau actuel et afficher le nouveau panneau.
 
     function showPanel(panel) {
-        //Hide current one. First time it will be null.
+        // Masquer le panneau actuel une fois cette fonction exécutée
         let expandedPanel = accordionElem.querySelector(".active");
         if (expandedPanel) {
             expandedPanel.classList.remove("active");
         }
 
-        //Show new one
+        // Afficher le nouveau panneau correspondant au div cliqué
         panel.classList.add("active");
     }
 
@@ -70,11 +70,11 @@ function accordionController(accordionElem) {
         allPanelElems[i].addEventListener("click", handlePanelClick);
     }
 
-    //By Default Show first panel
+    // Afficher le premier panneau par défaut
     showPanel(allPanelElems[0]);
 }
 
 if (document.getElementById("stars-lists")) {
-    // call this function when star-lists element comes into view
+    // Appeler cette fonction lorsque l'élément star-lists apparaît
     accordionController(document.getElementById("stars-lists"));
 }

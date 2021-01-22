@@ -33200,7 +33200,7 @@ label {
     margin-top: 20px;
   }
 
-  /** This class will hide the stars description by default **/
+  /** Cette classe masquera les informations des stars par défaut **/
 
   #stars-lists .acc-body {
     display: none;
@@ -33211,8 +33211,8 @@ label {
     margin-bottom: 30px;
   }
 
-  /** This class will show the description if it has a parent with active class 
-  **  and will change the background colours to white
+  /** Cette classe affichera les informations de le star si elle a un parent avec une classe active
+  **  et changera les couleurs d'arrière-plan en blanc
   **/
 
   #stars-lists .active .acc-body,

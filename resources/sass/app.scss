@@ -31,7 +31,7 @@
     z-index: 10;
 }
 
-// Format login, register, signout links on hover
+// Formater la connexion, l'enregistrement, les liens de déconnexion en survol
 .login-link:hover,
 .signout-modified-link:hover,
 .link-to-dashboard:hover,
@@ -78,7 +78,7 @@
     margin: auto;
 
     #stars-lists {
-        display: none; // Hide this block of code on large screen
+        display: none; // Masquer ce bloc de code sur grand écran
     }
 
     .startabs-parent-container {
@@ -89,14 +89,12 @@
 
     .startabs {
         display: flex;
-        //border-top-left-radius: 18px;
-        //border-bottom-left-radius: 18px;
         padding-bottom: 50px;
         padding-left: 50px;
     }
 
     .startabs_button:last-child {
-        border-bottom-left-radius: 18px; //rounded left bottom for the last button
+        border-bottom-left-radius: 18px; // arrondi en bas à gauche pour le dernier bouton
     }
 
     .startabs_sidebar {
@@ -105,7 +103,7 @@
     }
 
     .rounded-border {
-        border-top-left-radius: 18px; //used to set rounded border to the first button on the form
+        border-top-left-radius: 18px; //utilisé pour définir une bordure arrondie sur le premier bouton du formulaire
     }
 
     .startabs_button {
@@ -129,7 +127,7 @@
     }
 
     .startabs_button_active {
-        // active button class style
+        // style de classe de bouton actif
         font-weight: bold;
         border-right: none;
         background: $white;
@@ -156,12 +154,12 @@
     }
 
     .startabs_contents_active {
-        // active content class styling
+        // style de classe de contenu actif
         display: block;
     }
 
     .startabs_contents > :first-child {
-        //Margin top of the first child of our stars content
+        //Margin-top du premier enfant de notre contenu star
         margin-top: 0;
     }
 
@@ -477,7 +475,7 @@ label {
 
 @media only screen and (max-width: 600px) {
     .startabs-parent-container {
-        display: none !important; // hide this design for small screen
+        display: none !important; // cacher ce bloc pour le petit écran
     }
 
     /*
@@ -499,7 +497,7 @@ label {
         }
 
         #stars-lists {
-            display: block; // show on small screen
+            display: block; // montrer sur petit écran
         }
     }
 
@@ -507,7 +505,7 @@ label {
         margin-top: 20px;
     }
 
-    /** This class will hide the stars description by default **/
+    /** Cette classe masquera les informations des stars par défaut **/
     #stars-lists .acc-body {
         display: none;
 
@@ -517,8 +515,8 @@ label {
         padding-right: 10px;
     }
 
-    /** This class will show the description if it has a parent with active class 
-    **  and will change the background colours to white
+    /** Cette classe affichera les informations de le star si elle a un parent avec une classe active
+    **  et changera les couleurs d'arrière-plan en blanc
     **/
     #stars-lists .active {
         .acc-body,
@@ -546,7 +544,7 @@ label {
         font-weight: bold;
     }
 
-    //top navigation links
+    // liens de navigation supérieurs
     #top-right-links {
         margin-bottom: 100px;
     }
@@ -574,7 +572,7 @@ label {
         display: inline;
     }
 
-    //accordion content animation
+    // animation de contenu d'accordéon
 
     #stars-lists .active .acc-body {
         height: 0;
@@ -711,7 +709,7 @@ label {
         margin-top: 20px;
     }
 
-    // Change width container
+    // Changer la largeur du conteneur
     .startabs-parent-container {
         width: 90% !important;
     }

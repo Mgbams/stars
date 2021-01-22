@@ -20,7 +20,7 @@
 
     <div class="date-created">
         <p class="name">{{   strtoupper($star->nom) }} &nbsp;{{   strtoupper($star->prenom)  }}</p>
-        <p  class="name"><i>Créeé à: &nbsp;{{  date('j-m-y', strtotime($star->created_at)) }}</i></p>
+        <p  class="name"><i>Créeé le: &nbsp;{{  date('j-m-y', strtotime($star->created_at)) }}</i></p>
     </div>
 
     <div class="show-page-inner-div">

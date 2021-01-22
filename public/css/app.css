@@ -33324,5 +33324,9 @@ label {
   #delete {
     margin-top: 20px;
   }
+
+  .startabs-parent-container {
+    width: 90% !important;
+  }
 }
 

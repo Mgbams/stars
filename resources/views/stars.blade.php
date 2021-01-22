@@ -22,7 +22,7 @@
                 @If(Auth::check())
                     <!--Si authentifié et que l'utilisateur est un admin, affichez le lien du tableau de bord-->
                     @if(Auth::check() && Auth::user()->isAdministrator())
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="link-to-dashboard">Dashboard</a>
                     @else 
                          <!--Sinon affichez le bouton de sign out-->
                          <a href="#" class="btn btn-default btn-flat float-right signout-modified-link"
@@ -34,10 +34,10 @@
                         </form>
                     @endif
                 @else
-                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('login') }}" class="login-link">Login</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}" class="register-link">Register</a>
                     @endif
                  @endauth
             </div>

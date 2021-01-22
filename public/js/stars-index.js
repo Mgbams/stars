@@ -129,7 +129,7 @@ document.querySelectorAll(".startabs").forEach(function (starTabs) {
  * ==========================
  * Small scrren display code
  * ==========================
- * 
+ *
  */
 
 function accordionController(accordionElem) {

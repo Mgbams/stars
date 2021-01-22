@@ -38,44 +38,43 @@ document.querySelectorAll(".startabs").forEach(starTabs => {
     starTabs.querySelector(".startabs_sidebar .startabs_button").click();
 });
 
-
 /***
  * ==========================
  * Small scrren display code
  * ==========================
- * 
+ *
  */
 
- function accordionController(accordionElem) {
-     //when panel is clicked, handlePanelClick is called.
+function accordionController(accordionElem) {
+    //when panel is clicked, handlePanelClick is called.
 
-     function handlePanelClick(event) {
-         showPanel(event.currentTarget);
-     }
+    function handlePanelClick(event) {
+        showPanel(event.currentTarget);
+    }
 
-     //Hide currentPanel and show new panel.
+    //Hide currentPanel and show new panel.
 
-     function showPanel(panel) {
-         //Hide current one. First time it will be null.
-         var expandedPanel = accordionElem.querySelector(".active");
-         if (expandedPanel) {
-             expandedPanel.classList.remove("active");
-         }
+    function showPanel(panel) {
+        //Hide current one. First time it will be null.
+        let expandedPanel = accordionElem.querySelector(".active");
+        if (expandedPanel) {
+            expandedPanel.classList.remove("active");
+        }
 
-         //Show new one
-         panel.classList.add("active");
-     }
+        //Show new one
+        panel.classList.add("active");
+    }
 
-     var allPanelElems = accordionElem.querySelectorAll(".panel");
-     for (var i = 0, len = allPanelElems.length; i < len; i++) {
-         allPanelElems[i].addEventListener("click", handlePanelClick);
-     }
+    let allPanelElems = accordionElem.querySelectorAll(".panel");
+    for (let i = 0, len = allPanelElems.length; i < len; i++) {
+        allPanelElems[i].addEventListener("click", handlePanelClick);
+    }
 
-     //By Default Show first panel
-     showPanel(allPanelElems[0]);
- }
+    //By Default Show first panel
+    showPanel(allPanelElems[0]);
+}
 
- if (document.getElementById("stars-lists")) {
+if (document.getElementById("stars-lists")) {
     // call this function when star-lists element comes into view
-    accordionController(document.getElementById("stars-lists")); 
- }
+    accordionController(document.getElementById("stars-lists"));
+}

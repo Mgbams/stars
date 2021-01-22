@@ -17,6 +17,22 @@
     z-index: 10;
 }
 
+// Format login, register, signout links on hover
+.login-link:hover,
+.signout-modified-link:hover,
+.link-to-dashboard:hover,
+.register-link:hover {
+    height: 30px;
+    display: inline-block;
+    border-radius: 25px;
+    padding-top: 5px;
+    background-color: #ddd;
+}
+
+.brand-link:hover {
+    color: white;
+}
+
 /*
     =========================================
        Formatting of login and register page
@@ -456,12 +472,7 @@ label {
     */
 
     .main {
-        width: 100% !important;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+        width: 100%;
 
         img {
             width: 120px;
@@ -478,13 +489,16 @@ label {
     }
 
     .page-title-container {
-        margin-top: 200px !important;
-        z-index: 1;
+        margin-top: 50px;
+        .page-title {
+            z-index: 1;
+        }
     }
+
     /** This class will hide the stars description by default **/
     #stars-lists .acc-body {
         display: none;
-        //min-height: 150px;
+
         .img-span {
             margin-bottom: 30px;
         }
@@ -520,10 +534,12 @@ label {
         font-weight: bold;
     }
 
-    //list page of starsin admin panel
+    //top navigation links
     #top-right-links {
         margin-bottom: 100px;
-        z-index: 10;
+    }
+    .position-ref {
+        height: 60px;
     }
 
     .hide-on-small-screen {
@@ -675,7 +691,11 @@ label {
 }
 
 @media only screen and (max-width: 900px) {
-    // displays edit and delete button in colum format
+    /*
+    *   ==========================================================================
+    *    Displays edit and delete button in colum format Show page in admin panel
+    *   ==========================================================================
+    */
     .action-buttons {
         flex-direction: column;
     }
@@ -684,9 +704,19 @@ label {
         margin-top: 20px;
     }
 
-    // Change width of stars container
+    // Change width container
     .startabs-parent-container {
         width: 90% !important;
+    }
+
+    /*
+    *   ==========================
+    *    Index page on admin panel
+    *   ==========================
+    */
+
+    #edit {
+        margin-bottom: 10px;
     }
 }
 

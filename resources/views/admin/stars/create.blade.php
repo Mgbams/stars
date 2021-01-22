@@ -21,6 +21,12 @@
     </div>
     @endif
 
+    <div class="back-link-container">
+        <a class="back-to-index-link" href="{{ route('stars.index') }}">
+            <i class="far fa-hand-point-left"></i>&nbsp; Back
+        </a>
+    </div>
+
     <div class="create-form-container">
         {{ Form::open([
             'route' => ['stars.store'],

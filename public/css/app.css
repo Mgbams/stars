@@ -32705,6 +32705,21 @@ a.text-muted:hover {
   z-index: 10;
 }
 
+.login-link:hover,
+.signout-modified-link:hover,
+.link-to-dashboard:hover,
+.register-link:hover {
+  height: 30px;
+  display: inline-block;
+  border-radius: 25px;
+  padding-top: 5px;
+  background-color: #ddd;
+}
+
+.brand-link:hover {
+  color: white;
+}
+
 /*
     =========================================
        Formatting of login and register page
@@ -33144,11 +33159,7 @@ label {
   */
 
   .main {
-    width: 100% !important;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
   }
 
   .main img {
@@ -33165,7 +33176,10 @@ label {
   }
 
   .page-title-container {
-    margin-top: 200px !important;
+    margin-top: 50px;
+  }
+
+  .page-title-container .page-title {
     z-index: 1;
   }
 
@@ -33210,7 +33224,10 @@ label {
 
   #top-right-links {
     margin-bottom: 100px;
-    z-index: 10;
+  }
+
+  .position-ref {
+    height: 60px;
   }
 
   .hide-on-small-screen {
@@ -33317,6 +33334,12 @@ label {
 }
 
 @media only screen and (max-width: 900px) {
+  /*
+  *   ==========================================================================
+  *    Displays edit and delete button in colum format Show page in admin panel
+  *   ==========================================================================
+  */
+
   .action-buttons {
     flex-direction: column;
   }
@@ -33327,6 +33350,16 @@ label {
 
   .startabs-parent-container {
     width: 90% !important;
+  }
+
+  /*
+  *   ==========================
+  *    Index page on admin panel
+  *   ==========================
+  */
+
+  #edit {
+    margin-bottom: 10px;
   }
 }
 

@@ -82,12 +82,13 @@ $ php artisan serve
 ## users for test running the app
 
 -   Admin:
-    email: admin@admin.com
-    password: password
+
+    -   email: admin@admin.com
+    -   password: password
 
 -   User
-    email: king@gmail.com
-    password: testpassword
+    -   email: king@gmail.com
+    -   password: testpassword
 
 ## Sources
 

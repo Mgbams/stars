@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'isAdmin'], function() {
     Route::resource('stars', StarController::class);
+    Route::resource('users', UserController::class);
 });
 
 Route::get('dashboard', 'HomeController@index')->name('home')->middleware('isAdmin'); //Ajouter un middleware à cette route

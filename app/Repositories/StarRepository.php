@@ -18,7 +18,7 @@ class StarRepository
         return $star;
     }
 
-     /**
+    /**
         * Get the first star from database
         * @return collection
     */
@@ -68,13 +68,13 @@ class StarRepository
 
     public function editSingleStarById($id)
     {
-        $star= Star::where('id', $id)->first();
+        $star = Star::where('id', $id)->first();
 
         return $star;
     }
 
 
-       /**
+    /**
         * View a single star by its id
         *
         * @param int
@@ -83,7 +83,7 @@ class StarRepository
 
     public function viewById($id)
     {
-        $star= Star::where('id', $id)->first();
+        $star = Star::where('id', $id)->first();
 
         return $star;
     }
@@ -97,7 +97,7 @@ class StarRepository
 
     public function paginateStars($number)
     {
-        $star= Star::paginate($number);
+        $star = Star::paginate($number);
 
         return $star;
     }

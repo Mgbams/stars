@@ -1,17 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit a Star profile')
-
-@section('third_party_scripts')
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script>
-    tinymce.init({
-        selector:'textarea',
-        plugins:'code',
-        menubar:false
-        });
-  </script>
-@endsection
+@section('title', 'Edit a User profile')
 
 @section('content')
     <!--Message de réussite lors de la soumission du formulaire-->
@@ -22,19 +11,19 @@
     @endif
 
     <div class="back-link-container">
-        <a class="back-to-index-link" href="{{ route('stars.index') }}">
+        <a class="back-to-index-link" href="{{ route('users.index') }}">
             <i class="far fa-hand-point-left"></i>&nbsp; Back
         </a>
     </div>
 
     <div class="create-form-container">
         <!--utiliser la liaison de modèle pour remplir les champs html-->
-        {{  Form::model($star, ['route' => ['stars.update', $star->id], 'enctype' => 'multipart/form-data']) }}
+        {{  Form::model($user, ['route' => ['users.update', $user->id], 'enctype' => 'multipart/form-data']) }}
         <!--Form contents-->
             @method('PUT')
 
             <!-- Inclure les partial edit ici-->
-            @include('./../../partials/_edit-form')
+            @include('./../../partials/_user-edit-form')
 
         {{ Form::close() }}
     </div>
@@ -43,41 +32,41 @@
     <script>
         function formMonitor(formElements) {
 
-            //surveillance du texte d'erreur du champ nom
-            document.getElementById("nom").addEventListener("input", function() {
+            //surveillance du texte d'erreur du champ name
+            document.getElementById("name").addEventListener("input", function() {
                 if( this.value === "") {
                     // faire rien
                 } else {
-                    if( document.getElementsByClassName("nomError") && document.getElementById("nom").value !== "") {
+                    if( document.getElementsByClassName("nomError") && document.getElementById("name").value !== "") {
                         document.getElementsByClassName("nomError")[0].style.display = 'none';
-                        document.getElementById("nom").style.border = '1px solid green';
-                        document.getElementById("nom").style.color = 'black';
+                        document.getElementById("name").style.border = '1px solid green';
+                        document.getElementById("name").style.color = 'black';
                     }
                 }
             });
 
             // surveillance du texte d'erreur du champ prénom
-            document.getElementById("prenom").addEventListener("input", function() {
+            document.getElementById("email").addEventListener("input", function() {
                 if( this.value === "") {
                     // faire rien
                 } else {
-                    if( document.getElementsByClassName("prenomError") && document.getElementById("prenom").value !== "") {
+                    if( document.getElementsByClassName("prenomError") && document.getElementById("email").value !== "") {
                         document.getElementsByClassName("prenomError")[0].style.display = 'none';
-                        document.getElementById("prenom").style.border = '1px solid green';
-                        document.getElementById("prenom").style.color = 'black';
+                        document.getElementById("email").style.border = '1px solid green';
+                        document.getElementById("email").style.color = 'black';
                     }
                 }
             });
 
-            //surveillance du texte d'erreur du champ Description
-            document.getElementById("description").addEventListener("input", function() {
+             // surveillance du texte d'erreur du champ roles
+            document.getElementById("roles").addEventListener("change", function() {
                 if( this.value === "") {
                     // faire rien
                 } else {
-                    if( document.getElementsByClassName("descriptionError") && document.getElementById("description").value !== "") {
-                        document.getElementsByClassName("descriptionError")[0].style.display = 'none';
-                        document.getElementById("description").style.border = '1px solid green';
-                        document.getElementById("description").style.color = 'black';
+                    if( document.getElementsByClassName("prenomError") && document.getElementById("roles").value !== "") {
+                        document.getElementsByClassName("prenomError")[0].style.display = 'none';
+                        document.getElementById("roles").style.border = '1px solid green';
+                        document.getElementById("roles").style.color = 'black';
                     }
                 }
             });

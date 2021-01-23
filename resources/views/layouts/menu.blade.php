@@ -12,10 +12,17 @@
     </a>
 </li>
 
-<li class="nav-item {{ request()->is('stars') ? 'active' : ''}}">
+<li class="nav-item {{ request()->is('dashboard/stars') ? 'active' : ''}}">
     <a href="{{ url('dashboard/stars') }}" class="nav-link">
         <i class="fas fa-list-ul"></i>
         <p>Stars</p>
+    </a>
+</li>
+
+<li class="nav-item {{ request()->is('dashboard/users') ? 'active' : ''}}">
+    <a href="{{ url('dashboard/users') }}" class="nav-link">
+        <i class="fas fa-users"></i>
+        <p>Users</p>
     </a>
 </li>
 

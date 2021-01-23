@@ -7,49 +7,77 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+# StarsApp
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A simple application created with laravel and javascript.
 
--   [Simple, fast routing engine](https://laravel.com/docs/routing).
--   [Powerful dependency injection container](https://laravel.com/docs/container).
--   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
--   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
--   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
--   [Robust background job processing](https://laravel.com/docs/queues).
--   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Table of Contents
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   [General info](#general-info)
+-   [Technologies](#technologies)
+-   [Requirements](#requirements)
 
-## Learning Laravel
+*   [Features](#features)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   [Setup](#setup)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## General info
 
-## Laravel Sponsors
+This project is a skill test project that displays a celebrities information in different formats depending on the screen sizes. It also allows an administrator to manage the information displayed on the screen through the dashboard.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Technologies
 
-### Premium Partners
+This project was created with:
 
--   **[Vehikl](https://vehikl.com/)**
--   **[Tighten Co.](https://tighten.co)**
--   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
--   **[64 Robots](https://64robots.com)**
--   **[Cubet Techno Labs](https://cubettech.com)**
--   **[Cyber-Duck](https://cyber-duck.co.uk)**
--   **[Many](https://www.many.co.uk)**
--   **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
--   **[DevSquad](https://devsquad.com)**
--   **[OP.GG](https://op.gg)**
+-   Laravel
+-   Javascript
+-   Html5
+-   CSS3
 
-## requirements
+## Requirements
 
 -   Node Js
 -   Composer
 -   Code editeur e.g VS code
+-   A database e.g MySQL
 -   Run npm install to install dependencies
+
+## Features
+
+-   Edit, Delete, Update and Create a celebrity profile from the dashboard
+-   Edit, Delete, Update and Create a user profile from the dashboard
+
+*   Routing users based on user roles
+
+## Setup
+
+To run this project, install it locally as follows
+
+-   Download the Zip file to your computer or Open it with Github Desktop
+-   if you downloaded the zipped file, unzip the file using applications like winrar, 7-zip e.tc
+-   Create a MySQL database called **star_lists**.
+
+*   Import the file called star_lists.sql that is located in the unzipped file into the database you just created.
+    **NOTE**: The file format should be **utf8-general_ici**
+
+-   Open the folder after unzipping it in your code editor of choice e.g VSCode, PHPStorm e.t.c
+-   Open a terminal to install the php dependencies using the command
+
+```bash
+$ composer install
+```
+
+-   Also install the javascript dependencies using the command
+
+```bash
+$ npm install
+```
+
+-   Launch the application with
+
+```bash
+$ php artisan serve
+```
 
 ## users for test running the app
 
@@ -60,6 +88,10 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 -   User
     email: king@gmail.com
     password: testpassword
+
+## Sources
+
+This application was inspired by a skill test for a job application in Laravel with HelloCSE.
 
 ## Packages
 

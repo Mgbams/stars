@@ -33,5 +33,6 @@ class RoleRepository
         $userRole = RoleUser::where('user_id', $user_id)->update($role_data);
 
         return $userRole;
-    }    
+    }   
+     
 }

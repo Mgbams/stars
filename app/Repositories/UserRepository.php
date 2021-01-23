@@ -100,4 +100,24 @@ class UserRepository
         return $user;
     }
 
+
+    
+    /**
+        * get authenticated user role
+        *
+        * @param int
+        * @return collection
+    */
+
+       public function getAuthenticatedUserRole($id)
+    {
+         $user = DB::table('role_users')
+                    ->join('roles', 'role_users.role_id', '=', 'roles.id')
+                    ->join('users', 'role_users.user_id', '=', 'users.id')
+                    ->select('roles.name as roleName')
+                    ->where('users.id', '=', $id)
+                    ->first();
+        return $user;
+    }
+
 }

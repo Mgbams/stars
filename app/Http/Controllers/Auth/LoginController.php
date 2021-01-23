@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Repositories\UserRepository;
 
 class LoginController extends Controller
 {
+    private $userRepository;
+
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -26,15 +29,27 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    protected function authenticated($request, $user) {
+        $userRole =  $this->userRepository->getAuthenticatedUserRole($user->id);
+       
+        if($userRole->roleName === 'admin') {
+            //Si le rôle est == admin, redirigez l'utilisateur vers le tableau de bord
+            return redirect('/dashboard'); 
+        } else {
+            //Sinon redirigez l'utilisateur vers la Page d'accueil
+             return redirect('/');
+        }
+    }
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(UserRepository $userRepository)
     {
+         //Initialiser l'attribut
+        $this->userRepository   =  $userRepository; 
+
         $this->middleware('guest')->except('logout');
     }
 }

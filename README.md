@@ -92,11 +92,11 @@ $ php artisan serve
 
 ### Stars Lists on Large Screen
 
-![stars lists in dashboard](./application_captures/stars_lists_large_screen.png)
+<img src="./application_captures/stars_lists_large_screen.png" alt="stars lists in dashboard" width="200" height="150"/>
 
 ### Stars Lists on Small Screen
 
-![stars lists in dashboard](./application_captures/stars_lists_small_screen.png)
+<img src="./application_captures/./application_captures/stars_lists_small_screen.png" alt="stars lists in dashboard" width="200" height="150"/>
 
 ## Sources
 

@@ -96,7 +96,7 @@ $ php artisan serve
 
 ### Stars Lists on Small Screen
 
-<img src="./application_captures/stars_lists_small_screen.png" alt="stars lists in dashboard" width="200" height="200"/>
+<img src="./application_captures/stars_lists_small_screen.png" alt="stars lists in dashboard" width="400" height="200"/>
 
 ## Sources
 

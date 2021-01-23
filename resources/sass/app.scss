@@ -4,6 +4,9 @@
 //Admin LTE panel
 @import "~admin-lte/build/scss/AdminLTE";
 
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&family=Merriweather:wght@300&display=swap");
+
 /*
     =============== 
     Global Styles
@@ -527,7 +530,7 @@ label {
     }
 
     #stars-lists .panel {
-        color: $primary_text_color;
+        //color: $primary_text_color;
         border: 1px solid $container_border_color;
         background: $button_color;
         box-shadow: 0 0 5px -1px $container_box_shadow_color;
@@ -579,13 +582,13 @@ label {
         overflow: hidden;
         padding-bottom: 40px;
         /* Safari */
-        -webkit-animation: slide-up 2s ease-out forwards;
+        -webkit-animation: slide-up 2s linear forwards;
         /* Firefox*/
-        -moz-animation: slide-up 2s ease-out forwards;
+        -moz-animation: slide-up 2s linear forwards;
         /* Opera */
-        -o-animation: slide-up 2s ease-out forwards;
+        -o-animation: slide-up 2s linear forwards;
         /* IE */
-        animation: slide-up 2s ease-out forwards;
+        animation: slide-up 2s linear forwards;
     }
     /*Animation functionality*/
     @-webkit-keyframes slide-up {

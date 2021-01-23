@@ -18,6 +18,7 @@ A simple application created with laravel and javascript.
 -   [Requirements](#requirements)
 -   [Features](#features)
 -   [Setup](#setup)
+-   [Site](#site)
 
 ## General info
 
@@ -86,6 +87,16 @@ $ php artisan serve
 -   User
     -   email: king@gmail.com
     -   password: testpassword
+
+## Site
+
+### Stars Lists on Large Screen
+
+![stars lists in dashboard](./application_captures/stars_lists_large_screen.png)
+
+### Stars Lists on Small Screen
+
+![stars lists in dashboard](./application_captures/stars_lists_small_screen.png)
 
 ## Sources
 

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&family=Merriweather:wght@300&display=swap);@charset "UTF-8";
 
 /* 
     ==========================
@@ -33222,7 +33222,6 @@ label {
   }
 
   #stars-lists .panel {
-    color: #444;
     border: 1px solid #ccc;
     background: #ddd;
     box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
@@ -33272,11 +33271,11 @@ label {
     overflow: hidden;
     padding-bottom: 40px;
     /* Safari */
-    -webkit-animation: slide-up 2s ease-out forwards;
+    -webkit-animation: slide-up 2s linear forwards;
     /* Firefox*/
     /* Opera */
     /* IE */
-    animation: slide-up 2s ease-out forwards;
+    animation: slide-up 2s linear forwards;
   }
 
   /*Animation functionality*/

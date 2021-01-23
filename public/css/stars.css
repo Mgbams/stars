@@ -1,15 +1,27 @@
+@import url(https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&family=Merriweather:wght@300&display=swap);h1,
+.acc-header {
+  font-family: "Merriweather", serif;
+}
+
+.main-page-star-description {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 1.05rem;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   background-color: #fff;
-  color: #636b6f;
-  font-family: "Nunito", sans-serif;
   font-weight: 200;
-  height: 100vh;
   margin: 0;
-}
-
-.full-height {
-  height: 100vh;
+  font-size: 16px;
 }
 
 .flex-center {

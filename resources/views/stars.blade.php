@@ -59,7 +59,7 @@
                 <div class="acc-header">{{ $star->nom}}&nbsp;{{ $star->prenom}}</div>
                 <div class="acc-body">
                     <span class="img-span"><img align="left" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/></span>
-                    <span>{!! $star->description !!}</span>
+                    <span class="main-page-star-description">{!! $star->description !!}</span>
                 </div>
             </div>
             @endforeach
@@ -89,7 +89,7 @@
                         <span class="img-span">
                             <img align="left" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/>
                         </span>
-                        <span>{!! $star->description !!}</span>
+                        <span class="main-page-star-description">{!! $star->description !!}</span>
                     </div>
                 @endforeach
             @endif

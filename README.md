@@ -16,9 +16,7 @@ A simple application created with laravel and javascript.
 -   [General info](#general-info)
 -   [Technologies](#technologies)
 -   [Requirements](#requirements)
-
-*   [Features](#features)
-
+-   [Features](#features)
 -   [Setup](#setup)
 
 ## General info
@@ -46,8 +44,7 @@ This project was created with:
 
 -   Edit, Delete, Update and Create a celebrity profile from the dashboard
 -   Edit, Delete, Update and Create a user profile from the dashboard
-
-*   Routing users based on user roles
+-   Routing users based on user roles
 
 ## Setup
 

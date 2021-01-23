@@ -58,7 +58,7 @@ To run this project, install it locally as follows
 -   Create a MySQL database called **star_lists**.
 
 *   Import the file called star_lists.sql that is located in the unzipped file into the database you just created.
-    **NOTE**: The file format should be **utf8-general_ici**
+    **NOTE**: The database character set should be **utf8_general_ci** and the character set for the file during upload should be **utf8**.
 
 -   Open the folder after unzipping it in your code editor of choice e.g VSCode, PHPStorm e.t.c
 -   Open a terminal to install the php dependencies using the command
@@ -95,5 +95,5 @@ This application was inspired by a skill test for a job application in Laravel w
 
 ## Packages
 
-[html purifier](https://github.com/mewebstudio/Purifier)
-[tinyMCE](https://www.tiny.cloud/)
+-   [html purifier](https://github.com/mewebstudio/Purifier)
+-   [tinyMCE](https://www.tiny.cloud/)

@@ -18,9 +18,11 @@ Route::get('/', 'HomeController@show')->name('stars.main.page');
 
 Auth::routes();
 
+//Ajoutez un préfixe de 'dashboard' à ces routes et protégez-les avec le middleware 'isAdmin'
 Route::group(['prefix' => 'dashboard', 'middleware' => 'isAdmin'], function() {
     Route::resource('stars', StarController::class);
     Route::resource('users', UserController::class);
+    Route::resource('roles', RoleController::class);
 });
 
 Route::get('dashboard', 'HomeController@index')->name('home')->middleware('isAdmin'); //Ajouter un middleware à cette route

@@ -34,5 +34,32 @@ class RoleRepository
 
         return $userRole;
     }   
-     
+    
+    /**
+        * paginate roles received from database
+        *
+        * @param int
+        * @return collection
+    */
+
+    public function paginateRoles($number)
+    {
+        $roles = Role::paginate($number);
+        
+        return $roles;
+    }
+
+     /**
+        * Delete a role by its id
+        *
+        * @param int
+        * @return collection
+    */
+
+    public function deleteRoleById($id)
+    {
+        $role = Role::findOrFail($id);
+
+        return $role;
+    }
 }

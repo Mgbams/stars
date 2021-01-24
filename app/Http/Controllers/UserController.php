@@ -59,7 +59,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
          // Form validation
         $this->validate($request, [
             'name'                  => 'required',

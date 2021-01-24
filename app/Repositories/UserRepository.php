@@ -100,8 +100,6 @@ class UserRepository
         return $user;
     }
 
-
-    
     /**
         * get authenticated user role
         *

@@ -26,3 +26,10 @@
     </a>
 </li>
 
+<li class="nav-item {{ request()->is('dashboard/roles') ? 'active' : ''}}">
+    <a href="{{ url('dashboard/roles') }}" class="nav-link">
+        <i class="fab fa-critical-role"></i>
+        <p>Roles</p>
+    </a>
+</li>
+

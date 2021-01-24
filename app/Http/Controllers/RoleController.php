@@ -25,7 +25,7 @@ class RoleController extends Controller
     {
          $roles = $this->roleRepository->paginateRoles(5); // 5 contents per page
         //return the view containing the lists of users
-
+        //dd($roles);
         return view('admin.roles.index', compact('roles'));
     }
 
@@ -107,12 +107,16 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
+        
         $role = Role::findOrFail($id);
+
+        //dd($role);
 
         if($role->name == 'admin' || $role->name == 'user') {
             return redirect()->route('roles.index')->with('errorMessage', "Vous n'êtes pas autorisé à supprimer ces rôles");
         } else {
-             // Supprimer un role par identifiant
+
+            // Supprimer un role par identifiant
             $data = $this->roleRepository->deleteRoleById($id); // utiliser la requête du repository
 
             $data->delete();

@@ -35334,6 +35334,17 @@ try {
 
 /***/ }),
 
+/***/ "./resources/sass/role.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/role.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/stars.scss":
 /*!***********************************!*\
   !*** ./resources/sass/stars.scss ***!
@@ -35346,14 +35357,15 @@ try {
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/stars.scss ./resources/sass/app.scss ***!
-  \*****************************************************************************************/
+/*!********************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/stars.scss ./resources/sass/role.scss ./resources/sass/app.scss ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\Users\Utilisateur\Desktop\HelloCSE\star\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\Users\Utilisateur\Desktop\HelloCSE\star\resources\sass\stars.scss */"./resources/sass/stars.scss");
+__webpack_require__(/*! C:\Users\Utilisateur\Desktop\HelloCSE\star\resources\sass\role.scss */"./resources/sass/role.scss");
 module.exports = __webpack_require__(/*! C:\Users\Utilisateur\Desktop\HelloCSE\star\resources\sass\app.scss */"./resources/sass/app.scss");
 
 

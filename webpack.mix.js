@@ -13,5 +13,11 @@ const mix = require("laravel-mix");
 
 mix.js("resources/js/app.js", "public/js")
     .js("resources/js/stars-index.js", "public/js")
+    .js("resources/js/role.js", "public/js")
+    .js("resources/js/create-star.js", "public/js")
+    .js("resources/js/edit-star.js", "public/js")
+    .js("resources/js/create-user.js", "public/js")
+    .js("resources/js/edit-user.js", "public/js")
     .sass("resources/sass/stars.scss", "public/css")
+    .sass("resources/sass/role.scss", "public/css")
     .sass("resources/sass/app.scss", "public/css");

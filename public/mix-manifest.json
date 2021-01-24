@@ -1,6 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/stars.css": "/css/stars.css",
+    "/css/role.css": "/css/role.css",
     "/css/app.css": "/css/app.css",
+    "/js/create-star.js": "/js/create-star.js",
+    "/js/create-user.js": "/js/create-user.js",
+    "/js/edit-star.js": "/js/edit-star.js",
+    "/js/edit-user.js": "/js/edit-user.js",
+    "/js/role.js": "/js/role.js",
     "/js/stars-index.js": "/js/stars-index.js"
 }

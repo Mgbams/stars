@@ -1,0 +1,162 @@
+.modal,
+.delete-modal {
+    display: none;
+    position: fixed;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content,
+.delete-modal-content {
+    position: relative;
+    padding: 20px;
+    width: 50%;
+    top: 20%;
+    left: 25%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+.close-btn,
+.delete-close-btn {
+    color: lightgray;
+    font-size: 24px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.close-btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn:hover,
+.delete-close-btn:hover {
+    color: darkgray;
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#create_record {
+    width: 120px !important;
+}
+
+.submit-button {
+    margin-top: 20px;
+    padding: 5px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: green;
+}
+
+.create-form-container {
+    width: 50%;
+}
+
+form {
+    width: 100%;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 900px) {
+    .modal-content {
+        width: 80%;
+        left: 10%;
+        top: 10%;
+    }
+
+    .create-form-container {
+        width: 100%;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .create-form-container {
+        width: 80%;
+    }
+
+    .modal-content,
+    .delete-modal-content {
+        top: 8%;
+    }
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.align-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-when-no {
+    background-color: blue;
+}
+
+.delete-submit-button {
+    background-color: red;
+}
+
+.delete-submit-button,
+.close-when-no {
+    margin-top: 20px;
+    padding: 5px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+
+.hideErrorMessage {
+    display: none;
+}

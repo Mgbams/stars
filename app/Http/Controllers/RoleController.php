@@ -47,10 +47,9 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
         // Form validation
         $this->validate($request, [
-            'name'  => 'required',
+            'name'  => 'required|unique:roles',
         ]);
 
         // Formatting the inputs
@@ -108,11 +107,17 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-         // Supprimer un role par identifiant
-        $data = $this->roleRepository->deleteRoleById($id); // utiliser la requête du repository
+        $role = Role::findOrFail($id);
 
-        $data->delete();
+        if($role->name == 'admin' || $role->name == 'user') {
+            return redirect()->route('roles.index')->with('errorMessage', "Vous n'êtes pas autorisé à supprimer ces rôles");
+        } else {
+             // Supprimer un role par identifiant
+            $data = $this->roleRepository->deleteRoleById($id); // utiliser la requête du repository
 
-        return redirect()->route('roles.index')->with('success', 'Le rôle a été supprimé avec succès.');
+            $data->delete();
+
+            return redirect()->route('roles.index')->with('success', 'Le rôle a été supprimé avec succès.');
+        }
     }
 }

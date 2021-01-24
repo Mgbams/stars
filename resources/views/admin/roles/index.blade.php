@@ -159,6 +159,7 @@ input[type=text] {
     cursor: pointer;
     width: 40%;
 }
+
 </style>
 
 <div>
@@ -168,6 +169,20 @@ input[type=text] {
                 @if(Session::has('success'))
                 <div class="alert alert-success create-alert-success">
                     {{Session::get('success')}}
+                </div>
+                @endif
+        
+        <!--Erreur lors de la suppression du rôle-->
+                @if(Session::has('errorMessage'))
+                <div class="alert alert-danger create-alert-error">
+                    {{Session::get('errorMessage')}}
+                </div>
+                @endif
+
+          <!--Message d'erreur lors de la soumission du formulaire-->
+                @if ($errors->any())
+                <div class="alert alert-danger create-alert-error">
+                    <strong>Whoops!</strong> Ce rôle existe déjà
                 </div>
                 @endif
 

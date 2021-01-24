@@ -32938,7 +32938,8 @@ label {
   width: 95%;
 }
 
-.create-alert-success {
+.create-alert-success,
+.create-alert-error {
   width: 40vw;
   text-align: center;
   margin: auto;

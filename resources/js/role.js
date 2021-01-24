@@ -1,4 +1,8 @@
-/**************   Create Modal   *******************/
+/*
+ *   ================================
+ *        Create Role Modal
+ *    ===============================
+ */
 
 let modalBtn = document.getElementById("create_record");
 
@@ -20,7 +24,11 @@ window.onclick = function(e) {
     }
 };
 
-/****   Delete Modal  ******/
+/*
+ *   ================================
+ *        Delete Role Modal
+ *    ===============================
+ */
 
 document.querySelectorAll(".deleteById").forEach(button => {
     button.addEventListener("click", () => {
@@ -53,5 +61,37 @@ document.querySelectorAll(".deleteById").forEach(button => {
                 tabsToShow.style.display = "none";
             }
         };
+    });
+});
+
+/*
+ *   ===============================
+ *       Edit Role Modal
+ *    ==============================
+ */
+
+document.querySelectorAll(".editById").forEach(button => {
+    button.addEventListener("click", () => {
+        const roleNumber = button.dataset.forTab;
+        console.log(roleNumber);
+
+        const roleToEdit = document.querySelector(
+            `.edit-modal[data-tab="${roleNumber}"]`
+        );
+
+        roleToEdit.style.display = "block";
+
+        window.onclick = function(e) {
+            if (e.target == roleToEdit) {
+                roleToEdit.style.display = "none";
+            }
+        };
+
+        let deleteCloseButton =
+            roleToEdit.childNodes[1].childNodes[1].childNodes[1];
+
+        deleteCloseButton.addEventListener("click", () => {
+            roleToEdit.style.display = "none";
+        });
     });
 });

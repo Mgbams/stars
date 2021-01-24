@@ -32893,6 +32893,48 @@ a.text-muted:hover {
 }
 
 /* 
+    ============================
+        Dashboard Welcome page
+    ============================
+*/
+
+.dashboard-welcome-container {
+  width: 70%;
+  margin: auto;
+}
+
+.dashboard-welcome-container .dashboard-header {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.dashboard-welcome-container .inner-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-welcome-container .inner-container div {
+  width: 200px;
+  border: 1px solid #1d96b2;
+  border-radius: 50%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-welcome-container h6 {
+  color: blue !important;
+  font-size: 24px !important;
+}
+
+.dashboard-welcome-container .inner-container p {
+  color: #0d6628;
+  font-size: 22px !important;
+}
+
+/* 
     ==========================
         create form page
     ==========================
@@ -33339,6 +33381,26 @@ label {
   .show-page-inner-div .action-buttons-container,
   .show-page-inner-div .show-page-nom-prenom-container {
     width: 100%;
+  }
+
+  /*
+  *   ==============================
+  *       Dashboard welcome page
+  *   ==============================
+  */
+
+  .inner-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inner-container > div {
+    margin-bottom: 20px;
+  }
+
+  .inner-container div {
+    height: 150px;
+    width: 150px;
   }
 }
 

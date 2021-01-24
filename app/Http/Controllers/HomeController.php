@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\StarRepository;
 use App\Models\Star;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $usersCount = User::all()->count();
+        $starsCount = Star::all()->count();
+
+        return view('admin.dashboard', compact('starsCount', 'usersCount'));
     }
 
      /**
@@ -40,7 +44,6 @@ class HomeController extends Controller
     {
          $firstStar = $this->starRepository->getFirstStar(); // première star dans la base de données
 
-         //dd($firstStar);
          $stars =  $this->starRepository->getAllStars();
 
         return view('stars', compact('stars', 'firstStar'));

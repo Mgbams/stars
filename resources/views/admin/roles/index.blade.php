@@ -55,10 +55,41 @@
                     <td> {{ $role->id }} </td>
                     <td>{{ $role->name }}</td>
                     <td class="action-buttons">
+                        <!--  create modal -->
+
+                        <div class="modal edit-modal" data-tab="{{ $role->id}}">
+                            <div class="modal-content edit-modal-content">
+
+                                <div class="close-btn-container">
+                                    <span class="close-btn" style="color: red;">&times;</span>
+                                </div>
+                            
+                                <h3 class="modal-header">Edit Role</h3>
+                            
+                                <div class="edit-form-container">
+                                    <form action="{{ route('roles.update', $role->id) }}" method="POST" >
+                                        @csrf
+                                        @method('PUT')
+
+                                        <div class="form-content" id="edit-form-content">
+                                            <div>
+                                                <strong>Name:</strong>
+                                                <input type="text" name="name" value="{{ $role->name }}" placeholder="Name">
+                                            </div>
+
+                                            <div>
+                                                <button type="submit" class="submit-button">Update</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                         <div>
-                            <a id="edit" class="crud-links" href="{{ route('roles.edit', ['role' => $role->id]) }}">
+                            <button id="edit" class="crud-links editById" data-for-tab="{{ $role->id}}">
                                 <i class="far fa-md fa-edit"></i>&nbsp; Edit 
-                            </a>
+                            </button>
                         </div>
 
                       <!-- Delete modal -->

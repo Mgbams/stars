@@ -25,7 +25,6 @@ class RoleController extends Controller
     {
          $roles = $this->roleRepository->paginateRoles(5); // 5 contents per page
         //return the view containing the lists of users
-        //dd($roles);
         return view('admin.roles.index', compact('roles'));
     }
 
@@ -61,7 +60,7 @@ class RoleController extends Controller
         $role->name =   $roleName;
         $role->save();
 
-        //rediriger sur la page show
+        //rediriger sur la page index
         return redirect()->route('roles.index')->with('success', 'Le rôle a été créé avec succès');
     }
 
@@ -95,8 +94,34 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        if ($request->name == '') {
+            return redirect()->route('roles.index')->with('errorMessage', "Erreur!! Le nom du rôle ne peut pas être vide");
+        }
+
+        // Form validation
+        $this->validate($request, [
+            'name' => 'required|unique:roles',
+        ]);
+
+        $role = Role::findOrFail($id);
+
+        if ($role->name == 'admin' || $role->name == 'user') {
+            return redirect()->route('roles.index')->with('errorMessage', "Vous n'êtes pas autorisé à supprimer ces rôles");
+        } else  {
+
+            // Formatting the inputs
+            $roleName  = strtolower($request->name);
+
+            $form_data = array(
+                'name'  =>  $roleName,
+             );
+
+            $this->roleRepository->updateRoleById($id, $form_data); //Mettre à jour le nom du rôle
+
+            //rediriger sur la page index
+            return redirect()->route('roles.index')->with('success', 'Vos données ont été mises à jour avec succès.');
+        }
     }
 
     /**
@@ -107,12 +132,9 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        
         $role = Role::findOrFail($id);
 
-        //dd($role);
-
-        if($role->name == 'admin' || $role->name == 'user') {
+        if ($role->name == 'admin' || $role->name == 'user') {
             return redirect()->route('roles.index')->with('errorMessage', "Vous n'êtes pas autorisé à supprimer ces rôles");
         } else {
 

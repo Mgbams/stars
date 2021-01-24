@@ -62,4 +62,18 @@ class RoleRepository
 
         return $role;
     }
+
+     /**
+        * Update a role by its id
+        *
+        * @param int
+        * @return collection
+    */
+
+    public function updateRoleById($id, $form_data)
+    {
+        $role = Role::where('id', $id)->update($form_data);
+
+        return $role;
+    }
 }

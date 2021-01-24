@@ -93,7 +93,11 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-/**************   Create Modal   *******************/
+/*
+ *   ================================
+ *        Create Role Modal
+ *    ===============================
+ */
 var modalBtn = document.getElementById("create_record");
 var modal = document.querySelector(".create-modal");
 var closeBtn = document.querySelector(".close-btn");
@@ -111,7 +115,11 @@ window.onclick = function (e) {
     modal.style.display = "none";
   }
 };
-/****   Delete Modal  ******/
+/*
+ *   ================================
+ *        Delete Role Modal
+ *    ===============================
+ */
 
 
 document.querySelectorAll(".deleteById").forEach(function (button) {
@@ -135,6 +143,31 @@ document.querySelectorAll(".deleteById").forEach(function (button) {
         tabsToShow.style.display = "none";
       }
     };
+  });
+});
+/*
+ *   ===============================
+ *       Edit Role Modal
+ *    ==============================
+ */
+
+document.querySelectorAll(".editById").forEach(function (button) {
+  button.addEventListener("click", function () {
+    var roleNumber = button.dataset.forTab;
+    console.log(roleNumber);
+    var roleToEdit = document.querySelector(".edit-modal[data-tab=\"".concat(roleNumber, "\"]"));
+    roleToEdit.style.display = "block";
+
+    window.onclick = function (e) {
+      if (e.target == roleToEdit) {
+        roleToEdit.style.display = "none";
+      }
+    };
+
+    var deleteCloseButton = roleToEdit.childNodes[1].childNodes[1].childNodes[1];
+    deleteCloseButton.addEventListener("click", function () {
+      roleToEdit.style.display = "none";
+    });
   });
 });
 

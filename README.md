@@ -39,7 +39,6 @@ This project was created with:
 -   Composer
 -   Code editeur e.g VS code
 -   A database e.g MySQL
--   Run npm install to install dependencies
 
 ## Features
 
@@ -92,7 +91,7 @@ $ php artisan serve
 
 ### Stars Lists on Large Screen
 
-<img src="./application_captures/stars_lists_large_screen.png" alt="stars lists in dashboard" width="400" height="200"/>
+<img src="./application_captures/stars_lists_large_screen.png" alt="stars lists in dashboard" width="600" height="250"/>
 
 ### Stars Lists on Small Screen
 
@@ -106,3 +105,4 @@ This application was inspired by a skill test for a job application in Laravel w
 
 -   [html purifier](https://github.com/mewebstudio/Purifier)
 -   [tinyMCE](https://www.tiny.cloud/)
+-   [AdminLTE](https://github.com/ColorlibHQ/AdminLTE)

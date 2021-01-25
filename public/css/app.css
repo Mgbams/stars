@@ -32775,6 +32775,7 @@ a.text-muted:hover {
 }
 
 .main .startabs-parent-container {
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
   border: 1px solid #ccc;
   width: 60%;
   margin: 100px auto 40px auto;
@@ -32782,8 +32783,9 @@ a.text-muted:hover {
 
 .main .startabs {
   display: flex;
-  padding-bottom: 50px;
   padding-left: 50px;
+  margin-bottom: 0px;
+  padding-bottom: 130px;
 }
 
 .main .startabs_button:last-child {
@@ -32810,6 +32812,15 @@ a.text-muted:hover {
   cursor: pointer;
 }
 
+.main .vertical-bottom-line:after {
+  content: "";
+  border-right: 1px solid #ddd;
+  width: 298.98px;
+  height: 90px;
+  position: absolute;
+  top: 605.8px;
+}
+
 .main .startabs_button:active {
   background: #ddd;
 }
@@ -32822,6 +32833,7 @@ a.text-muted:hover {
   font-weight: bold;
   border-right: none;
   background: white;
+  border-left: 1px solid #ccc;
 }
 
 .main .startabs_contents {

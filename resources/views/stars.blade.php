@@ -71,7 +71,7 @@
             <div class="page-title-container">
                 <h1 class="page-title">Profile Browser</h1>
             </div>
-            <div  class="startabs">
+            <div class="startabs">
                 <div class="startabs_sidebar">
                 @if($stars)
                     @foreach($stars as $star)
@@ -81,20 +81,22 @@
                         </button>
                     @endforeach
                 @endif
+                </div>
+
+                @if($stars)
+                    @foreach($stars as $star)
+                        <div class="startabs_contents" data-tab="{{ $star->id}}">
+                            <span class="img-span">
+                                <img align="left" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/>
+                            </span>
+                            <span class="main-page-star-description">{!! $star->description !!}</span>
+                        </div>
+                    @endforeach
+                @endif
+
             </div>
 
-            @if($stars)
-                @foreach($stars as $star)
-                    <div class="startabs_contents" data-tab="{{ $star->id}}">
-                        <span class="img-span">
-                            <img align="left" src="images/{{$star->id}}/{{$star->image}}" alt="{{ $star->prenom }}" class="star-profile-image"/>
-                        </span>
-                        <span class="main-page-star-description">{!! $star->description !!}</span>
-                    </div>
-                @endforeach
-            @endif
-
-            </div>
+            <div class="vertical-bottom-line"></div>
             
         </div>
    </div>

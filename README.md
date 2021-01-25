@@ -97,6 +97,14 @@ $ php artisan serve
 
 <img src="./application_captures/stars_lists_small_screen.png" alt="stars lists in dashboard" width="400" height="200"/>
 
+### Landing Page Large Screen
+
+<img src="./application_captures/landing_page_big_screen.png" alt="stars lists in dashboard" width="400" height="250"/>
+
+### Landing Page Small Screen
+
+<img src="./application_captures/landing_page_small_screen.png" alt="stars lists in dashboard" width="400" height="200"/>
+
 ## Sources
 
 This application was inspired by a skill test for a job application in Laravel with HelloCSE.

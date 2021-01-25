@@ -107,9 +107,9 @@ $ php artisan serve
 
 <img src="./application_captures/stars_lists_large_screen.png" alt="stars lists in dashboard" width="600" height="250"/>
 
-### Stars Lists on Small Screen
+### Delete a role
 
-<img src="./application_captures/stars_lists_small_screen.png" alt="stars lists in dashboard" width="400" height="200"/>
+<img src="./application_captures/deleting_role.png" alt="stars lists in dashboard" width="400" height="200"/>
 
 ### Landing Page Large Screen
 

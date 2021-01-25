@@ -47,7 +47,7 @@
     <!-- Page contents starts here -->
    <div class="main">
         
-        <!-- displayed on small screens -->
+        <!-- affiché sur de petits écrans -->
         <div id="stars-lists">
             <div class="page-title-container">
                 <h1 class="page-title">Profile Browser</h1>
@@ -65,7 +65,7 @@
             @endforeach
             @endif
         </div>
-        <!-- displayed on small screen ends here -->
+        <!-- affiché sur petit écran se termine ici-->
         
         <div class="startabs-parent-container">
             <div class="page-title-container">
@@ -76,7 +76,7 @@
                 <div class="startabs_sidebar">
                 @if($stars)
                     @foreach($stars as $star)
-                    <!--if star->id === $firstStar->id then give the button a rounded-border class -->
+                    <!--si star->id === $firstStar->id puis donnez au bouton une classe à bordure arrondie -->
                         <button class="startabs_button {{ ($firstStar[0]->id === $star->id) ? 'rounded-border' : ''}}" data-for-tab="{{ $star->id}}">
                             {{ $star->nom}}&nbsp;{{ $star->prenom}}
                         </button>

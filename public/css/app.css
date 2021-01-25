@@ -32815,10 +32815,20 @@ a.text-muted:hover {
 .main .vertical-bottom-line:after {
   content: "";
   border-right: 1px solid #ddd;
-  width: 298.98px;
+  width: 298.97px;
   height: 120px;
   position: absolute;
-  top: 605.8px;
+  top: 630.5px;
+}
+
+.main .vertical-top-line:after {
+  content: "";
+  border-right: 1px solid #cccccc4d;
+  width: 298.98px;
+  height: 15px;
+  position: absolute;
+  background-color: white;
+  top: 170px;
 }
 
 .main .startabs_button:active {
@@ -32867,6 +32877,7 @@ a.text-muted:hover {
 .main .page-title-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 25px;
   /*  
       =======================
         Animate page title

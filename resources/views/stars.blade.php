@@ -71,6 +71,7 @@
             <div class="page-title-container">
                 <h1 class="page-title">Profile Browser</h1>
             </div>
+            <div class="vertical-top-line"></div>
             <div class="startabs">
                 <div class="startabs_sidebar">
                 @if($stars)

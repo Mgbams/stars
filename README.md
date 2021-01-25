@@ -52,10 +52,11 @@ To run this project, install it locally as follows
 
 -   Download the Zip file to your computer or Open it with Github Desktop
 -   if you downloaded the zipped file, unzip the file using applications like winrar, 7-zip e.tc
--   Create a MySQL database called **star_lists**.
+-   Create a MySQL database called **star_lists** or with a name of your choice.
+    The interclassement should be **utf8_general_ci**.
 
 *   Import the file called star_lists.sql that is located in the unzipped file into the database you just created.
-    **NOTE**: The database character set should be **utf8_general_ci** and the character set for the file during upload should be **utf8**.
+    **NOTE**: The character set for the file during import should be **utf8**.
 
 -   Open the folder after unzipping it in your code editor of choice e.g VSCode, PHPStorm e.t.c
 -   Open a terminal to install the php dependencies using the command
@@ -68,6 +69,19 @@ $ composer install
 
 ```bash
 $ npm install
+```
+
+-   Create a **.env** file at the root of your application.
+
+-   Copy the contents of **.env.example** to **.env**
+
+-   Open the **.env** file and add the name of the database you created. In the configuration of the mysql database, we add star_lists to the DB_DATABASE =
+    i.e. **DB_DATABASE=star_lists**
+
+-   Generate a key with
+
+```bash
+$ php artisan key:generate
 ```
 
 -   Launch the application with

@@ -103,7 +103,7 @@ $ php artisan serve
 
 ### Landing Page Small Screen
 
-<img src="./application_captures/landing_page_small_screen.png" alt="stars lists in dashboard" width="400" height="200"/>
+<img src="./application_captures/landing_page_small_screen.png" alt="stars lists in dashboard" width="250" height="200"/>
 
 ## Sources
 
